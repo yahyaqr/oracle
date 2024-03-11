@@ -1,11 +1,13 @@
-# Obsidian Notes
+# Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
-Publish your public notes with MkDocs
+#### About Me:
 
-## Hello World!
+As an **aspiring and passionate engineering manager**, I am dedicated to building engaging and user-friendly digital solutions using the latest technologies and best practices. 💻🔥
 
-The `index.md` in the `/docs` folder is the homepage you see here.
+My goal is to continuously learn, grow, and make a positive impact through my work. I am excited to connect and collaborate with other like-minded professionals in the field. 🌲
 
-The folders in `/docs` appear as the main sections on the navigation bar.
-
-The notes appear as pages within these sections. For example, [[Describe something about your partner that makes you smile]] in `Topic 1`
+#### How to reach me:
+ - [Website](https://yahyaqr.github.com/)
+ - [Instagram](https://www.instagram.com/yahyaqr/?hl=id)
+ - [Medium](https://medium.com/@yahyaqr)
+ - [LinkedIn](https://www.linkedin.com/in/yahya-aqrom/)
