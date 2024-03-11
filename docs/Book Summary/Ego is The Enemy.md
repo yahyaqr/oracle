@@ -17,8 +17,7 @@ tags: BookSummary
 aliases: [Ego is The Enemy by Ryan Holiday, Ryan Holiday]
 
 ---
-> [!One Sentence summary]
-> Ego Is The Enemy reveals how a tendency that’s hardwired into our brains – the belief the world revolves around us and us alone – holds us back from living the life it makes us desire so much, what we can do to overcome it at every turn and how to achieve true greatness.
+Ego Is The Enemy reveals how a tendency that’s hardwired into our brains – the belief the world revolves around us and us alone – holds us back from living the life it makes us desire so much, what we can do to overcome it at every turn and how to achieve true greatness.
 
 ---
 ### Plus, Minus, and Equal
@@ -30,18 +29,18 @@ aliases: [Ego is The Enemy by Ryan Holiday, Ryan Holiday]
 ### Forever a Student
 
 >It is impossible for a man to learn that, which he thinks he already knows.”
->\--- **Epictetus**
+>--- **Epictetus**
 
 > You aren’t as good as you think you are, you probably need your attitude readjusted, and the things you learned in books or school are out of date or wrong.
 
 > As our island of knowledge grows, so does the shore of our ignorance.
 > **--- John Wheler**
 
-> A student is self-critical and self-motivated, always trying to improve his understanding so that he can move onto the next topic, the next challenge.
-> **\--- page 41.**
+> A student is self-critical and self-motivated, always trying to improve his understanding so that he can move onto the next topic, the next challenge. 
+> **--- page 41.**
 
 ---
-### Live with Purpose Not Passion (Euthymia)
+### Live with Purpose Not Passion
 
 > Why do I do what I do? Who am I? What purpose am I serving?
 
@@ -54,16 +53,16 @@ aliases: [Ego is The Enemy by Ryan Holiday, Ryan Holiday]
 > Alive time is time when you are actively using your time usefully and improving; dead time is time you spend passive.
 
 > It’s about being what you are, and being as good as possible at it, without succumbing to all the things that draw you away from it.
-> **\--- page 117**
+> **--- page 117**
 
 ---
 ### Do your Best, Forget the Rest
 
 > We have only minimal control over the rewards for our work and effort–other people’s validation, recognition, rewards. So what are we going to do? Not be kind, not work hard, not produce, because there is a chance it wouldn’t be reciprocated? C’mon.
-> **\--- page 178**
+> **--- page 178**
 
 ---
 ### Always Love
 
-> Hate at any point is a cancer that gnaws away at the very vital center of your life and your existence. It is like eroding acid that eats away the best and the objective center of your life,
-> **\--- page 204**
+> Hate at any point is a cancer that gnaws away at the very vital center of your life and your existence. It is like eroding acid that eats away the best and the objective center of your life. 
+> **--- page 204**

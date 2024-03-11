@@ -11,7 +11,8 @@ Highlighted
 >
 > My superego knew that ==i== just need to communicate the problem, but ==i== feel too tired. Communicating needs plenty of my time and energy. ==Sometime== ==i== resolve the situation by resting and communicate when my mind refreshed and my mental energy is good.
 
-### Error:
+Error:
+---
 1. **Grammar:** The personal pronoun “I” should be uppercase.
 2. **Possible agreement error:** Did you mean “am” or “will be”? (I googled and chose went)
 3. **Punctuation:** Use a comma before ‘and’ if it connects two independent clauses (unless they are closely connected and short).
