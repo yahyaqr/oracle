@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Book Summary/The Compound Effect.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Book Summary/The Compound Effect.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Book Summary/The Compound Effect.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Book Summary/The Compound Effect.md"
               }
             }
           },
@@ -142,9 +142,9 @@
   },
   "active": "54d64550040ff5ac",
   "lastOpenFiles": [
+    "index.md",
     "Book Summary/Ego is The Enemy.md",
     "Book Summary/The Compound Effect.md",
-    "index.md",
     "Daily Questions/Describe something about your partner that makes you smile.md",
     "Daily Questions/What are your own danger signs during a disagreement.md",
     "Book Summary",

@@ -19,7 +19,7 @@ created: Monday, October 24th 2022 - 10.55
 updated: Monday, October 24th 2022 - 10.55
 
 ---
-The compound effect is the strategy of reaping huge rewards from small, seemingly insignificant actions. You cannot improve something until you measure it. Always take 100 percent responsibility for everything that happens to you.
+The Compound Effect is the strategy of reaping huge rewards from small, seemingly insignificant actions. You cannot improve something until you measure it. Always take 100 percent responsibility for everything that happens to you.
 
 ---
 ### Choice Awareness
