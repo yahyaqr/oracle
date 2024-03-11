@@ -8,8 +8,7 @@ theme:
         - navigation.tabs
         - navigation.tabs.sticky
         - navigation.tracking
-        - navigation.instant
-        - navigation.instant.prefetch
+        - navigation.instant.progress
         - navigation.top
         - content.code.annotate
     palette:
