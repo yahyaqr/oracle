@@ -1,72 +1,64 @@
 site_name: Yahya's Oracle
-site_description: My personal digital garden
-site_author: Yahyaqr
-site_url: https://yahyaqr.github.io/oracle
 
 theme:
-  name: material
-  custom_dir: theme
-  logo: img/logo.bmp
-  features:
-    - navigation.instant
-    - navigation.top
-    - content.code.annotate
+    name: 'material'
+    palette:
 
-  palette:
     # Light mode
-    - media: '(prefers-color-scheme: light)'
+    - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue grey
-      accent: light blue
+      primary: pink
+      accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
     # Dark mode
-    - media: '(prefers-color-scheme: dark)'
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue grey
-      accent: light blue
+      primary: pink
+      accent: blue
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
 
 # Extensions
 markdown_extensions:
-  - abbr
-  - admonition
-  - meta
-  - def_list
-  - toc:
-      permalink: ⚑
-      baselevel: 2
-  - pymdownx.arithmatex
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: '!!python/name:pymdownx.emoji.to_svg'
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+  - footnotes
+  # - attr_list
+  - pymdownx.arithmatex:
+      generic: true
+  # - pymdownx.superfences
+  # - pymdownx.details
+  # - pymdownx.magiclink
   - pymdownx.tasklist:
       custom_checkbox: true
+  - def_list
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - toc:
+      permalink: true
 
 plugins:
   - search
   - roamlinks
-  - minify:
-      minify_html: true
-  - section-index
-  - mkdocs-newsletter
+  - blog
+  - rss:
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
 
 extra_javascript:
   - javascripts/mathjax.js
