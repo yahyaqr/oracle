@@ -1,0 +1,135 @@
+{
+  "main": {
+    "id": "8d765d6c2586e906",
+    "type": "split",
+    "children": [
+      {
+        "id": "4e1ffa9931ac3223",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "54d64550040ff5ac",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4b0db9b633cafb6e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c8a6fa9cc2dec786",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6f8728f676ca424a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "52a783443aa555f6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "67539c58b89117e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "1971deb5190dd7c2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b95f148b15f38fe1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f9f77e652d1c2fe7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0212fb744b76d255",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "02aaae337b9d613d",
+            "type": "leaf",
+            "state": {
+              "type": "git-history-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Create new canvas": false,
+      "audio-recorder:Start/stop recording": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "6f8728f676ca424a",
+  "lastOpenFiles": [
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Daily Questions/2 What are your own danger signs during a disagreement.md",
+    "Daily Questions/1 Describe something about your partner that makes you smile.md",
+    "index.md"
+  ]
+}
