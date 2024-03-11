@@ -11,10 +11,11 @@
             "id": "54d64550040ff5ac",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".gitignore",
-                "staged": false
+                "file": "Book Summary/Ego is The Enemy.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -76,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Book Summary/Ego is The Enemy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,6 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Book Summary/Ego is The Enemy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -102,7 +105,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Book Summary/Ego is The Enemy.md"
+              }
             }
           },
           {
@@ -122,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -137,10 +142,13 @@
   },
   "active": "54d64550040ff5ac",
   "lastOpenFiles": [
+    "Book Summary/The Compound Effect.md",
+    "Book Summary/Ego is The Enemy.md",
+    "Daily Questions/1 Describe something about your partner that makes you smile.md",
+    "Daily Questions/2 What are your own danger signs during a disagreement.md",
+    "Book Summary",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "Daily Questions/2 What are your own danger signs during a disagreement.md",
-    "Daily Questions/1 Describe something about your partner that makes you smile.md",
     "index.md"
   ]
 }
