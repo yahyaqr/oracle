@@ -1,14 +1,23 @@
 site_name: Yahya's Oracle
-
+site_description: My personal digital garden
+site_author: Yahyaqr
+site_url: https://yahyaqr.github.io/oracle
 theme:
     name: 'material'
+    features:
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.tracking
+        - navigation.instant
+        - navigation.instant.prefetch
+        - navigation.top
+        - content.code.annotate
     palette:
-
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: pink
-      accent: indigo
+      primary: blue grey
+      accent: light blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
@@ -16,8 +25,8 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: pink
-      accent: blue
+      primary: blue grey
+      accent: light blue
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -44,21 +53,12 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
   - toc:
       permalink: true
 
 plugins:
   - search
   - roamlinks
-  - blog
-  - rss:
-      match_path: blog/posts/.* 
-      date_from_meta:
-        as_creation: date
-      categories:
-        - categories
-        - tags
 
 extra_javascript:
   - javascripts/mathjax.js
