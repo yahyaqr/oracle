@@ -11,8 +11,11 @@
             "id": "54d64550040ff5ac",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "diff-view",
+              "state": {
+                "file": ".gitignore",
+                "staged": false
+              }
             }
           }
         ]
@@ -109,9 +112,17 @@
               "type": "git-history-view",
               "state": {}
             }
+          },
+          {
+            "id": "f015cd85470288f0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -124,7 +135,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6f8728f676ca424a",
+  "active": "54d64550040ff5ac",
   "lastOpenFiles": [
     "Untitled 1.canvas",
     "Untitled.canvas",
