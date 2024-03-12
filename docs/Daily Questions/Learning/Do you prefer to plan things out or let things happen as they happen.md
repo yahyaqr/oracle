@@ -1,0 +1,1 @@
+Obviously, I'd prefer to plan things out. It's just how my brain works—persistently thinking about our future. I'd like to plan things out right away so I can face them with proper preparation.

@@ -1,1 +1,0 @@
-One thing that ALWAYS makes me smile is her soft voice when she is reciting my name. She often recites it repeatedly. I admire this act because I can’t think of someone who can get that close to me and love me this much.

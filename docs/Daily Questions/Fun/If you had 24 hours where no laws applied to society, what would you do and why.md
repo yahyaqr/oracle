@@ -1,0 +1,1 @@
+I would still do the same, because as far as I know, the law only prohibit bad deeds. I strive for harmony.

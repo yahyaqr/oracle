@@ -1,1 +1,0 @@
-We were in conflict, had gone through a long discussion, and somehow she still sent numerous pictures when I woke up the next day.

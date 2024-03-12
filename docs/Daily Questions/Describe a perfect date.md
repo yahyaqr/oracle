@@ -1,1 +1,0 @@
-A perfect date is a halal and undisturbed one, free from internal and external factors that could disrupt our intimate moment. When these conditions are met, I believe any date could be our perfect date—whether it's a cozy weekend at home, a memorable trip, or a refreshing staycation, I'd love it all.
