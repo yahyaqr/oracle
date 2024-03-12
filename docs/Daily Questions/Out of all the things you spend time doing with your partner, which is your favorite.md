@@ -1,0 +1,1 @@
+KCKPMB is my favorite thus far, it feels like we're undetachable couple. I love when she act clingy near me.

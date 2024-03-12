@@ -1,0 +1,1 @@
+We certainly had some ideas, but the reality check that we are not a legitimate couple (yet) is limiting us. Our safe option is AYCE.

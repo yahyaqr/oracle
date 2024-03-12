@@ -1,0 +1,1 @@
+The Best Gift of a Lifetime. I've always said that humans only live once, and finding her in my lifetime must be my undeserved gift. Even when it seems like I don't care about her, feeling her presence actually improves my overall condition. May our destinies cross and intertwine in the future, so I can have her in my life for much longer.

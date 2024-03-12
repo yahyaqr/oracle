@@ -1,0 +1,1 @@
+Yes, because approachable strangers can provide plenty of useful insights. However, I can be selective about the situations in which I'm willing to socialize.

@@ -1,0 +1,1 @@
+Never have to pay for food or drinks at restaurants. I think it is economically better and promises more practical use than the other option. Food is our basic need, meanwhile, a flight ticket is a supplementary need. Having free food eliminates half of my fundamental survival problem.
