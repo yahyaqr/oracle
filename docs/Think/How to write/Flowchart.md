@@ -1,1 +1,1 @@
-	![[How to write.svg]]
+![[How to write.svg]]
