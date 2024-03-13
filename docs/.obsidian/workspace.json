@@ -4,23 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4e1ffa9931ac3223",
+        "id": "6598932e994e2420",
         "type": "tabs",
         "children": [
           {
-            "id": "54d64550040ff5ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e121601e3e4ee99b",
+            "id": "2ce24ff5290c0ff1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,22 +20,16 @@
             }
           },
           {
-            "id": "b0fbcf99a179a027",
+            "id": "513c147699c51c50",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "image",
               "state": {
-                "file": "Mental Models/The Done Manifesto.canvas",
-                "viewState": {
-                  "x": -95,
-                  "y": 1362,
-                  "zoom": -1.9465701664444366
-                }
+                "file": "Mental Models/How to write.svg"
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +43,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6f8728f676ca424a",
+            "id": "905d76c7d797a714",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -89,7 +71,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 292.5
   },
   "right": {
     "id": "67539c58b89117e8",
@@ -105,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mental Models/The Done Manifesto.canvas",
+                "file": "How-to.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mental Models/The Done Manifesto.canvas",
+                "file": "How-to.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mental Models/The Done Manifesto.canvas"
+                "file": "How-to.md"
               }
             }
           },
@@ -163,26 +145,39 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "canvas:Create new canvas": false,
+      "canvas:Create new canvas": true,
       "audio-recorder:Start/stop recording": false,
       "command-palette:Open command palette": false
     }
   },
-  "active": "b0fbcf99a179a027",
+  "active": "2ce24ff5290c0ff1",
   "lastOpenFiles": [
-    "Mental Models/How to write.canvas",
-    "Mental Models/The Done Manifesto.canvas",
-    "Mental Models/How to write.md",
+    "index.md",
     "Todo.md",
+    "Mental Models/How to write.md",
+    "How-to.md",
+    "Mental Models/How to write.svg",
+    "Mental Models/How to write.canvas",
+    "Mental Models/How to writex.svg",
+    "How.md",
+    "Mental Models/How to write.png",
+    "Mental Models/Untitled Diagram.svg",
+    "Mental Models/The Done Manifesto.canvas",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Untitled 2.canvas",
+    "Untitled Diagram 1.svg",
+    "Untitled Diagram.svg",
+    "Mental Models/How to write.svg.xml",
+    "Excalidraw/Drawing 2024-03-13 13.10.51.excalidraw.md",
+    "Excalidraw",
     "Toro Takeaways",
     "Mental Models",
-    "How-to.md",
     "Daily Questions/Behavioral/How do you normally respond when other people are rude or mean to you.md",
     "Daily Questions/Behavioral/What's something you've been meaning to try to but just haven't gotten around to yet.md",
     "Daily Questions/Behavioral/When do you most easily lose your temper in conversations or situations.md",
     "Daily Questions/Behavioral/What are your own danger signs during a disagreement.md",
     "Daily Questions/Behavioral/Share one way you would like to do a better job of managing difficult emotions or insecurities.md",
-    "index.md",
     "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
     "Daily Questions/Learning/What's something you used to do a lot but don't any more.md",
     "Daily Questions/Fun/If you could give your partner a magical gift, what would it be and why.md",
@@ -197,16 +192,11 @@
     "Daily Questions/Learning/Have you ever won or been chosen for something despite thinking you had no chance.md",
     "Daily Questions/Learning/What's something that people are usually surprised to learn about you.md",
     "Daily Questions/Learning/Share a memory that many people don't know about that always bring you joy.md",
-    "Daily Questions/Learning/Do you have any fears that you would consider irrational.md",
-    "Daily Questions/Behavioral/What parts of your personality or behavior cause friction in your relationship.md",
     "Daily Questions/What-if",
     "Daily Questions/Behavioral",
     "Daily Questions/Unmarried Era/Behavioral",
     "Daily Questions/Unmarried Era/Investment",
     "Daily Questions/Fun",
-    "Daily Questions/Unmarried Era/Fun",
-    "Daily Questions/Investment",
-    "Daily Questions/Unmarried Era/Gratitude",
-    "Untitled 1.canvas"
+    "Daily Questions/Unmarried Era/Fun"
   ]
 }

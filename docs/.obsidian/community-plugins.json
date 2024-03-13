@@ -1,4 +1,6 @@
 [
   "obsidian-git",
-  "obsidian-plugin-toc"
+  "obsidian-plugin-toc",
+  "obsidian-languagetool-plugin",
+  "obsidian-diagrams-net"
 ]
