@@ -6,10 +6,13 @@ theme:
     name: 'material'
     features:
         - navigation.tabs
-        - navigation.tabs.sticky
         - navigation.tracking
-        - navigation.instant.progress
+        - navigation.instant
+        - navigation.instant.prefetch
         - navigation.top
+        - navigation.path
+        - toc.follow
+        - navigation.footer
         - content.code.annotate
     palette:
     # Light mode
@@ -58,6 +61,9 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks
+
+extra:
+  generator: false
 
 extra_javascript:
   - javascripts/mathjax.js
