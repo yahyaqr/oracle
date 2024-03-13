@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e121601e3e4ee99b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -140,8 +153,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "54d64550040ff5ac",
+  "active": "e121601e3e4ee99b",
   "lastOpenFiles": [
+    "How-to.md",
+    "index.md",
     "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
     "Daily Questions/Learning/What's something you used to do a lot but don't any more.md",
     "Daily Questions/Fun/If you could give your partner a magical gift, what would it be and why.md",
@@ -166,8 +181,6 @@
     "Daily Questions/Learning/Does making friends with strangers come naturally to you.md",
     "Daily Questions/Behavioral/What are your own danger signs during a disagreement.md",
     "Daily Questions/Behavioral/How do you normally respond when other people are rude or mean to you.md",
-    "Daily Questions/Behavioral/When do you most easily lose your temper in conversations or situations.md",
-    "Daily Questions/Unmarried Era/Gratitude/Out of all the things you spend time doing with your partner, which is your favorite.md",
     "Daily Questions/What-if",
     "Daily Questions/Behavioral",
     "Daily Questions/Unmarried Era/Behavioral",
