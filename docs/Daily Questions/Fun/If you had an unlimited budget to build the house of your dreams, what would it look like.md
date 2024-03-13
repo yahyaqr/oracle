@@ -1,1 +1,0 @@
-I want to build many tiny houses as assets. If possible, one of these tiny houses would have a spacious front yard, providing a space for my family to hang out together. I aim to minimize the hours and resources needed to maintain a large house. Instead, we could travel more often, trying comfortable villas.

@@ -1,5 +1,5 @@
 ### Admonitions
-#### Types
+#### Admonitions Types
 
 !!! note "Add title"
 
@@ -25,7 +25,31 @@
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
-#### Variations
+#### Admonitions Inlines
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
+!!! info inline end "Lorem ipsum"
+
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Nulla et euismod nulla.
+    Curabitur feugiat, tortor non consequat
+    finibus, justo purus auctor massa, nec
+    semper lorem quam in massa.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
+!!! info inline "Lorem ipsum"
+
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Nulla et euismod nulla.
+    Curabitur feugiat, tortor non consequat
+    finibus, justo purus auctor massa, nec
+    semper lorem quam in massa.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
+#### Admonitions Variations
 
 !!! note
 
@@ -99,34 +123,13 @@
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
-#### Inlines
-
-!!! info inline end "Lorem ipsum"
-
-    Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Nulla et euismod nulla.
-    Curabitur feugiat, tortor non consequat
-    finibus, justo purus auctor massa, nec
-    semper lorem quam in massa.
-
-!!! info inline "Lorem ipsum"
-
-    Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Nulla et euismod nulla.
-    Curabitur feugiat, tortor non consequat
-    finibus, justo purus auctor massa, nec
-    semper lorem quam in massa.
-
 ### Annotations
 
-!!! note annotate "Phasellus posuere in sem ut cursus (1)"
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+{ .annotate }
 
-    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
-    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-    purus auctor massa, nec semper lorem quam in massa.
-
-1.  :man_raising_hand: I'm an annotation!
-2.  :woman_raising_hand: I'm an annotation as well!
+1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be expressed in Markdown.
 
 ### Buttons
 
@@ -202,6 +205,17 @@
         3. Nulla tempor lobortis orci
         ```
 
+#### Annotations inside Admonitions
+
+!!! note annotate "Phasellus posuere in sem ut cursus (1)"
+
+    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
+    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
+    purus auctor massa, nec semper lorem quam in massa.
+
+1.  :man_raising_hand: I'm an annotation!
+2.  :woman_raising_hand: I'm an annotation as well!
+
 ### Footnote
 
 Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
@@ -256,23 +270,3 @@ Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
     Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
     Nam vulputate tincidunt fringilla.
     Nullam dignissim ultrices urna non auctor.
-
-#### Task Lists
-[x] 
-[ ]
-[ ]
-[x]
-- [x]
-- [ ]
-- [ ]
-- [x]
--   [x] item 1
-    *   [X] item A
-    *   [ ] item B
-        more text
-        +   [x] item a
-        +   [ ] item b
-        +   [x] item c
-    *   [X] item C
--   [ ] item 2
--   [ ] item 3
