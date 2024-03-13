@@ -6,6 +6,7 @@ theme:
     name: 'material'
     features:
         - navigation.tabs
+        - navigation.tabs.sticky
         - navigation.tracking
         - navigation.instant
         - navigation.instant.prefetch
