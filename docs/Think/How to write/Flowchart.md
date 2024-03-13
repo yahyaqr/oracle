@@ -1,1 +1,1 @@
-	![[How to write.svg]]{ style="display: block; margin: 0 auto" }
+	![[How to write.svg]]
