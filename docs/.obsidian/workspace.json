@@ -13,19 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "How-to.md",
+                "file": "Mental Models/How to write/Flowchart.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "513c147699c51c50",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Mental Models/How to write.svg"
               }
             }
           }
@@ -87,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "How-to.md",
+                "file": "Mental Models/How to write/Flowchart.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "How-to.md",
+                "file": "Mental Models/How to write/Flowchart.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -116,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "How-to.md"
+                "file": "Mental Models/How to write/Flowchart.md"
               }
             }
           },
@@ -152,15 +142,17 @@
   },
   "active": "2ce24ff5290c0ff1",
   "lastOpenFiles": [
+    "Mental Models/How to write/How to write.svg",
+    "Mental Models/How to write/How to write.canvas",
+    "Mental Models/How to write/Flowchart.md",
+    "Mental Models/How to write/Mini Essay.md",
+    "Mental Models/How to write",
+    "Mental Models/How to writex.svg",
+    "Mental Models/How to write.png",
+    "How-to.md",
     "index.md",
     "Todo.md",
-    "Mental Models/How to write.md",
-    "How-to.md",
-    "Mental Models/How to write.svg",
-    "Mental Models/How to write.canvas",
-    "Mental Models/How to writex.svg",
     "How.md",
-    "Mental Models/How to write.png",
     "Mental Models/Untitled Diagram.svg",
     "Mental Models/The Done Manifesto.canvas",
     "Untitled 1.canvas",
@@ -168,7 +160,7 @@
     "Untitled 2.canvas",
     "Untitled Diagram 1.svg",
     "Untitled Diagram.svg",
-    "Mental Models/How to write.svg.xml",
+    "Mental Models/How to write/How to write.svg.xml",
     "Excalidraw/Drawing 2024-03-13 13.10.51.excalidraw.md",
     "Excalidraw",
     "Toro Takeaways",
@@ -191,12 +183,10 @@
     "Daily Questions/Fun/What's a conspiracy theory you believe may actually be true.md",
     "Daily Questions/Learning/Have you ever won or been chosen for something despite thinking you had no chance.md",
     "Daily Questions/Learning/What's something that people are usually surprised to learn about you.md",
-    "Daily Questions/Learning/Share a memory that many people don't know about that always bring you joy.md",
     "Daily Questions/What-if",
     "Daily Questions/Behavioral",
     "Daily Questions/Unmarried Era/Behavioral",
     "Daily Questions/Unmarried Era/Investment",
-    "Daily Questions/Fun",
-    "Daily Questions/Unmarried Era/Fun"
+    "Daily Questions/Fun"
   ]
 }
