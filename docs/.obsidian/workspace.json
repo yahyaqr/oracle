@@ -30,9 +30,24 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b0fbcf99a179a027",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Mental Models/The Done Manifesto.canvas",
+                "viewState": {
+                  "x": -95,
+                  "y": 1362,
+                  "zoom": -1.9465701664444366
+                }
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -90,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "How-to.md",
+                "file": "Mental Models/The Done Manifesto.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "How-to.md",
+                "file": "Mental Models/The Done Manifesto.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "How-to.md"
+                "file": "Mental Models/The Done Manifesto.canvas"
               }
             }
           },
@@ -153,14 +168,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e121601e3e4ee99b",
+  "active": "b0fbcf99a179a027",
   "lastOpenFiles": [
+    "Mental Models/How to write.canvas",
+    "Mental Models/The Done Manifesto.canvas",
+    "Mental Models/How to write.md",
+    "Todo.md",
+    "Toro Takeaways",
+    "Mental Models",
+    "How-to.md",
     "Daily Questions/Behavioral/How do you normally respond when other people are rude or mean to you.md",
     "Daily Questions/Behavioral/What's something you've been meaning to try to but just haven't gotten around to yet.md",
     "Daily Questions/Behavioral/When do you most easily lose your temper in conversations or situations.md",
     "Daily Questions/Behavioral/What are your own danger signs during a disagreement.md",
     "Daily Questions/Behavioral/Share one way you would like to do a better job of managing difficult emotions or insecurities.md",
-    "How-to.md",
     "index.md",
     "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
     "Daily Questions/Learning/What's something you used to do a lot but don't any more.md",
@@ -178,9 +199,6 @@
     "Daily Questions/Learning/Share a memory that many people don't know about that always bring you joy.md",
     "Daily Questions/Learning/Do you have any fears that you would consider irrational.md",
     "Daily Questions/Behavioral/What parts of your personality or behavior cause friction in your relationship.md",
-    "Daily Questions/Learning/Do you prefer to plan things out or let things happen as they happen.md",
-    "Daily Questions/Learning/What's something you'd love to receive as a gift but no one ever thinks of.md",
-    "Daily Questions/Learning/What do you do when you need to feel motivated.md",
     "Daily Questions/What-if",
     "Daily Questions/Behavioral",
     "Daily Questions/Unmarried Era/Behavioral",
@@ -189,9 +207,6 @@
     "Daily Questions/Unmarried Era/Fun",
     "Daily Questions/Investment",
     "Daily Questions/Unmarried Era/Gratitude",
-    "Daily Questions/Learning",
-    "Daily Questions/Unmarried Era/Learning",
-    "Untitled 1.canvas",
-    "Untitled.canvas"
+    "Untitled 1.canvas"
   ]
 }
