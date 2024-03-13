@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md"
+                "file": "index.md"
               }
             }
           },
@@ -142,8 +142,8 @@
   },
   "active": "54d64550040ff5ac",
   "lastOpenFiles": [
-    "Daily Questions/Learning/What's something you used to do a lot but don't any more.md",
     "Daily Questions/Fun/What's something unpleasant that you think everyone should try at least once.md",
+    "Daily Questions/Learning/What's something you used to do a lot but don't any more.md",
     "Daily Questions/Fun/If you could give your partner a magical gift, what would it be and why.md",
     "Daily Questions/Learning/Share a way that you've grown recently.md",
     "Daily Questions/Learning/What's something you understand today that you wouldn't have understood a year ago.md",
