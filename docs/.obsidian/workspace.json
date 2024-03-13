@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mental Models/How to write/Flowchart.md",
+                "file": "Todo.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mental Models/How to write/Flowchart.md",
+                "file": "Todo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mental Models/How to write/Flowchart.md",
+                "file": "Todo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mental Models/How to write/Flowchart.md"
+                "file": "Todo.md"
               }
             }
           },
@@ -142,14 +142,14 @@
   },
   "active": "2ce24ff5290c0ff1",
   "lastOpenFiles": [
-    "Mental Models/How to write/Mini Essay.md",
+    "How-to.md",
     "Mental Models/How to write/Flowchart.md",
+    "Mental Models/How to write/Mini Essay.md",
     "Mental Models/How to write/How to write.canvas",
     "Mental Models/How to write/How to write.svg",
     "Mental Models/How to write",
     "Mental Models/How to writex.svg",
     "Mental Models/How to write.png",
-    "How-to.md",
     "index.md",
     "Todo.md",
     "How.md",

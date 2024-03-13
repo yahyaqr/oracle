@@ -1,2 +1,2 @@
-1. Figuring out how to write
-2. 
+- [x] Figuring out how to write
+- [x] Figuring out how to read
