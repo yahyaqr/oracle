@@ -63,7 +63,7 @@ plugins:
   - roamlinks
 
 extra:
-  - generator: false
+  generator: false
 
 extra_javascript:
   - javascripts/mathjax.js
