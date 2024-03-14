@@ -30,40 +30,76 @@
 
 ### Flowchart
 
-???+ example "Example"
+???+ example "Basic Flowchart"
 
 	![[Pasted image 20240314124347.png]]
 
+???+ example "Spiderweb Flowchart"
+
+	![[Pasted image 20240314132614.png]]
+
+???+ example "Choose Your Own Adventure"
+
+	![[Pasted image 20240314132752.png]]
+
+???+ example "Linear Representations"
+
+	![[Pasted image 20240314133022.png]]
+
+
+???+ example "Hybrid Flowcharts"
+
+	![[Pasted image 20240314133113.png]]
+
 ### Swimlane Process
 
-???+ example "Example"
+???+ example "Sales Process"
+
+![[Pasted image 20240314132348.png]]
+
+???+ example "Payroll Planning"
 
 	![[Pasted image 20240314125127.png]]
 
 ### Decision tree
 
-???+ example "Example"
+???+ example "Heart Attack Risk"
+
+	![[Pasted image 20240314132307.png]]
+
+???+ example "Job Offer"
 
 	![[Pasted image 20240314124554.png]]
 
-### Decision Score Matrix
+### Decision Matrix
 
-???+ example "Example"
+???+ example "Weighted"
 
-	![[Pasted image 20240314123256.png]]
+![[Pasted image 20240314132056.png]]
 
+???+ example "Not Weighted"
+
+	![[Pasted image 20240314132143.png]]
 ### Cross Matrix
 
-???+ example "Example"
+???+ example "Prioritization Matrix"
 
 	![[Pasted image 20240314123152.png]]
 
-???+ example "Example"
+???+ example "Gap Analysis"
 
 	![[Pasted image 20240314123517.png]]
 
-### Euler diagram
+### Venn Diagram
+
+???+ example "Ikigai Purpose"
+
+	![[Pasted image 20240314131909.png]]
+
+???+ example "The Hedgehog Concept"
+
+	![[Pasted image 20240314130755.png]]
 
 ???+ example "Example"
 
-	![[Pasted image 20240314130755.png]]
+	![[Pasted image 20240314131650.png]]
