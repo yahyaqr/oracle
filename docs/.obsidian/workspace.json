@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How to read/Mini Essay.md",
+                "file": "🛠/Type of Tools.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ec4b968a6518a780",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🛠/Type of Tools.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How to read/Mini Essay.md",
+                "file": "🛠/Type of Tools.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +107,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How to read/Mini Essay.md",
+                "file": "🛠/Type of Tools.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +119,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How to read/Mini Essay.md"
+                "file": "🛠/Type of Tools.md"
               }
             }
           },
@@ -140,40 +153,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c62b3a5f94b64285",
+  "active": "ec4b968a6518a780",
   "lastOpenFiles": [
+    "🛠/How-to.md",
+    "🛠/Type of Tools.md",
+    "🛠/Type of Data Visualizations.md",
+    "Pasted image 20240314125127.png",
+    "Pasted image 20240314125120.png",
+    "Pasted image 20240314125117.png",
+    "🛠/Todo.md",
+    "Pasted image 20240314124814.png",
+    "Pasted image 20240314124554.png",
+    "Pasted image 20240314124347.png",
+    "Pasted image 20240314124216.png",
+    "Pasted image 20240314123517.png",
+    "Pasted image 20240314123256.png",
+    "Pasted image 20240314123152.png",
+    "Think/How to read/Mini Essay.md",
     "Think/How to read/Flowchart.md",
     "Think/How to write/Mini Essay.md",
     "Think/How to write/Flowchart.md",
-    "Think/How to read/Mini Essay.md",
-    "Think/How to write/How to write.svg",
-    "Think/How to read/How to read.svg",
-    "Think/How to read/How to read.svg.svg",
     "Think/How to read/How to read.svg.xml",
-    "Think/How to read/How to write.svg",
     "Think/How to read/How to write.svg.xml",
     "Think/How to read/Diagram.svg.xml",
-    "Think/How to read/Diagram.svg",
-    "Think/How to read/How to write 1.svg",
     "Book/The Compound Effect.md",
     "Book/Ego is The Enemy.md",
     "Think/How to write/How to write.canvas",
     "🛠",
-    "🛠/Todo.md",
     "index.md",
-    "🛠/How-to.md",
     "Excalidraw/Drawing 2024-03-13 13.10.51.excalidraw.md",
     "Think/How to read",
     "Think/How to write",
-    "Mental Models/How to writex.svg",
-    "Mental Models/How to write.png",
     "How.md",
-    "Mental Models/Untitled Diagram.svg",
     "Think/The Done Manifesto.canvas",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Untitled 2.canvas",
-    "Untitled Diagram 1.svg",
     "Think/How to write/How to write.svg.xml",
     "Excalidraw",
     "Think/Toro",
@@ -189,8 +204,6 @@
     "Question/Learning/Share a way that you've grown recently.md",
     "Question/Learning/What's something you understand today that you wouldn't have understood a year ago.md",
     "Daily Questions/Fun/If you had an unlimited budget to build the house of your dreams, what would it look like.md",
-    "Daily Questions/What-if/index.md",
-    "Daily Questions/Fun/Choose between unlimited first-class flights or never paying for food and drinks.md",
-    "Daily Questions/Fun/If you had 24 hours where no laws applied to society, what would you do and why.md"
+    "Daily Questions/What-if/index.md"
   ]
 }
