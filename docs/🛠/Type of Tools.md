@@ -2,104 +2,104 @@
 
 ???+ example  "Fiction Book Anatomy"
 
-    ![[Pasted image 20240314124814.png]]
+    ![[Mindmap-FBA.png]]
 
 ### Concept map
 
-???+ example "Example"
+???+ example "Concept"
 
-	![[Pasted image 20240314120223.png]]
+	![[Concept Map-C.png]]
 
 ### Process map
 
-???+ example "Example"
+???+ example "The Six Sigma Process"
 
-	![[Pasted image 20240314120610.png]]
+	![[Process Map-TSSP.png]]
 
 ### Strategy map
 
-???+ example "Example"
+???+ example "Business"
 
-	![[Pasted image 20240314120741.png]]
+	![[Strategy Map-B.png]]
 
 ### Canvas
 
 ???+ example "Empathy Map"
 
-	![[Pasted image 20240314121223.png]]
+	![[Canvas-EM.png]]
 
 ### Flowchart
 
 ???+ example "Basic Flowchart"
 
-	![[Pasted image 20240314124347.png]]
+	![[Flowchart-BF.png]]
 
 ???+ example "Spiderweb Flowchart"
 
-	![[Pasted image 20240314132614.png]]
+	![[Flowchart-SF.png]]
 
 ???+ example "Choose Your Own Adventure"
 
-	![[Pasted image 20240314132752.png]]
+	![[Flowchart-CYOA.png]]
 
 ???+ example "Linear Representations"
 
-	![[Pasted image 20240314133022.png]]
+	![[Flowchart-LR.png]]
 
 
 ???+ example "Hybrid Flowcharts"
 
-	![[Pasted image 20240314133113.png]]
+	![[Flowchart-HF.png]]
 
 ### Swimlane Process
 
 ???+ example "Sales Process"
 
-![[Pasted image 20240314132348.png]]
+![[Swimlane Process-SP.png]]
 
 ???+ example "Payroll Planning"
 
-	![[Pasted image 20240314125127.png]]
+	![[Swimlane Process-PP.png]]
 
 ### Decision tree
 
 ???+ example "Heart Attack Risk"
 
-	![[Pasted image 20240314132307.png]]
+	![[Decision Tree-HAR.png]]
 
-???+ example "Job Offer"
+???+ example "Job Application"
 
-	![[Pasted image 20240314124554.png]]
+	![[Decision Tree-JA.png]]
 
 ### Decision Matrix
 
 ???+ example "Weighted"
 
-![[Pasted image 20240314132056.png]]
+![[Decision Matrix-W.png]]
 
 ???+ example "Not Weighted"
 
-	![[Pasted image 20240314132143.png]]
+	![[Decision Matrix-NW.png]]
 ### Cross Matrix
 
 ???+ example "Prioritization Matrix"
 
-	![[Pasted image 20240314123152.png]]
+	![[Cross Matrix-PM.png]]
 
 ???+ example "Gap Analysis"
 
-	![[Pasted image 20240314123517.png]]
+	![[Cross Matrix-GA.png]]
 
 ### Venn Diagram
 
 ???+ example "Ikigai Purpose"
 
-	![[Pasted image 20240314131909.png]]
+	![[Venn Diagram-IP.png]]
 
 ???+ example "The Hedgehog Concept"
 
-	![[Pasted image 20240314130755.png]]
+	![[Venn Diagram-THC.png]]
 
-???+ example "Example"
+???+ example "Framework Toro"
 
-	![[Pasted image 20240314131650.png]]
+	![[Venn Diagram-FT.png]]
