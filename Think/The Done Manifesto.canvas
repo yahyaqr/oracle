@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"db203c436c5324ea","type":"text","text":"Accept that everything is a DRAFT","x":-199,"y":872,"width":250,"height":60},
+		{"id":"d1f4eff7110fe543","type":"text","text":"There is no editing stage","x":-199,"y":960,"width":250,"height":60},
+		{"id":"2dc28f48b301b414","type":"text","text":"Pretending you know what you are doing IS ALMOST EQUAL TO knowing what you are doing","x":-199,"y":1070,"width":250,"height":135},
+		{"id":"830adaccc8038ac4","type":"text","text":"If you wait more than a week to get an idea done, ABANDON IT","x":-199,"y":1257,"width":250,"height":118},
+		{"id":"b725d850335b5f91","type":"text","text":"The point of being done is not to finish, but to get other things done","x":-199,"y":1425,"width":250,"height":97},
+		{"id":"7b6176825ad661c7","type":"text","text":"Even if you don't","x":199,"y":1040,"width":250,"height":60},
+		{"id":"28e40424d4968375","type":"text","text":"Just do it","x":199,"y":1145,"width":250,"height":60},
+		{"id":"77523dd69aa39e50","type":"text","text":"Once you're done, you can throw it away","x":199,"y":1290,"width":250,"height":60},
+		{"id":"6eea047073d69da5","type":"text","text":"Laugh at perfection, it boring and keep you from being done","x":199,"y":1389,"width":250,"height":85},
+		{"id":"e19ebacb2a7bb262","type":"text","text":"Failure counts as DONE, so do mistakes","x":460,"y":1523,"width":250,"height":60},
+		{"id":"d636c52a6ead6326","type":"text","text":"The art is not the art","x":500,"y":1290,"width":250,"height":60},
+		{"id":"1f69daa78e89802d","type":"text","text":"The art is the thing that happen inside you when you make it and the feeling of in the heart of the beholder","x":849,"y":1305,"width":250,"height":155},
+		{"id":"13374267372f6e87","type":"text","text":"If you have an idea and publish it on the internet, that counts as a ghost of done","x":630,"y":1599,"width":250,"height":141},
+		{"id":"44959eeed2349492","type":"text","text":"Destruction is the variant of DONE","x":883,"y":1524,"width":250,"height":60},
+		{"id":"0b1340ea318b8e50","type":"text","text":"Ideas are worthless, give it away","x":920,"y":1640,"width":250,"height":60},
+		{"id":"77d4f5e43cd7641e","type":"text","text":"People without dirty hands are wrong, doing something makes you right","x":199,"y":1522,"width":250,"height":126},
+		{"id":"bc8d89e9c2eda73b","type":"text","text":"Done is the engine of more","x":858,"y":1792,"width":250,"height":60},
+		{"id":"72e38677a0501734","x":-1360,"y":1041,"width":1004,"height":433,"type":"text","text":"1. There are three states of being. Not knowing, action and completion.\n2. Accept that everything is a draft. It helps to get it done.\n3. There is no editing stage.\n4. Pretending you know what you’re doing is almost the same as knowing what you are doing, so just accept that you know what you’re doing even if you don’t and do it.\n5. Banish procrastination. If you wait more than a week to get an idea done, abandon it.\n6. The point of being done is not to finish but to get other things done.\n7. Once you’re done you can throw it away.\n8. Laugh at perfection. It’s boring and keeps you from being done.\n9. People without dirty hands are wrong. Doing something makes you right.\n10. Failure counts as done. So do mistakes.\n11. Destruction is a variant of done.\n12. If you have an idea and publish it on the internet, that counts as a ghost of done.\n13. Done is the engine of more."}
+	],
+	"edges":[
+		{"id":"3a74a97c0ee56a4d","fromNode":"2dc28f48b301b414","fromSide":"right","toNode":"7b6176825ad661c7","toSide":"left"},
+		{"id":"470a970bae908b36","fromNode":"7b6176825ad661c7","fromSide":"bottom","toNode":"28e40424d4968375","toSide":"top"},
+		{"id":"f09423c566d2a06b","fromNode":"2dc28f48b301b414","fromSide":"right","toNode":"28e40424d4968375","toSide":"left"},
+		{"id":"1cdc4dd19f4ce204","fromNode":"13374267372f6e87","fromSide":"right","toNode":"0b1340ea318b8e50","toSide":"left"}
+	]
+}
