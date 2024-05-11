@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How to code/How to React-TypeScript.md",
+                "file": "Think/How_to-code/How to React-TypeScript.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5,
-    "collapsed": true
+    "width": 292.5
   },
   "right": {
     "id": "67539c58b89117e8",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How to code/How to React-TypeScript.md",
+                "file": "Think/How_to-code/How to React-TypeScript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How to code/How to React-TypeScript.md",
+                "file": "Think/How_to-code/How to React-TypeScript.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How to code/How to React-TypeScript.md"
+                "file": "Think/How_to-code/How to React-TypeScript.md"
               }
             }
           },
@@ -128,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -141,13 +140,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c62b3a5f94b64285",
+  "active": "f015cd85470288f0",
   "lastOpenFiles": [
     "Pasted image 20240512000612.png",
-    "Think/How to code/How to React.md",
-    "Think/How to code/How to React-TypeScript.md",
-    "Think/How to code/How to React Native.md",
-    "Think/How to code/How to TypeScript.md",
+    "Think/How_to-code/How to React.md",
+    "Think/How_to-code/How to React-TypeScript.md",
+    "Think/How_to-code/How to React Native.md",
+    "Think/How_to-code/How to TypeScript.md",
     "🛠/Canvas-EM.png",
     "How to React.md",
     "props.md",
@@ -155,7 +154,7 @@
     "Think/How to be valuable/How to be valuable.md",
     "Think/How to code/TypeScript",
     "Think/How to code/React",
-    "Think/How to code",
+    "Think/How_to-code",
     "Book/The Compound Effect.md",
     "Think/How to be valuable",
     "Book/Ego is The Enemy.md",
