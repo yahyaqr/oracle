@@ -81,7 +81,7 @@ To implement the Context API, it’s necessary to first create the Context using
 
 The **createContext()** function is used to create an instance of the [[#Context]] API that other components can read. It should be used in combination with the [[#useContext()]] hook.
 
-### Syntax
+**Syntax**
 
 ```jsx
 import { createContext } from 'react';
@@ -94,7 +94,7 @@ const MyContext = createContext(defaultValue);
 
 To pass the context down further, it is necessary to wrap the component tree in a context provider. A `value` prop needs to be passed inside the provider.
 
-### Example
+**Example**
 
 ```jsx
 export default function App() {
@@ -135,7 +135,7 @@ Hooks are imported at the top of a file from the `react` library:
 
 The **`useContext()`** hook subscribes a child [[#Components]] to a [[#Context]] which includes its `value` [[#Props]] that exists further up the component tree.
 
-### Syntax
+**Syntax**
 
 The components can read the `Context` value using the `useContext()` hook:
 
@@ -156,13 +156,12 @@ Context is passed to other components by wrapping them in a context provider com
 </MyContext.Provider>
 ```
 
-### Example 1
+**Example 1**
 
 The following example shows a single file, `App.js`, and how a background theme could be passed down to all child components via the `useContext()` hook. The `value` prop in this case is the `theme` state:
 
 ```jsx
 // App.js
-
 import { createContext, useContext, useState } from 'react';
 
 const ThemeContext = createContext();
@@ -223,7 +222,7 @@ The `useContext()` hook was used to apply a `ThemeContext` to the `<Contain
 
 The `theme` state is changed through the `setter` function that is passed to the `Button` component as a prop. The component uses it in the `onClick` event. In the example above, the theme is changed to black if the theme is white and vice versa.
 
-### Example 2
+**Example 2**
 
 The following example shows how the `useContext()` hook can subscribe a component to a context imported from another file:
 
@@ -270,11 +269,11 @@ export function Display() {
 
 ## useEffect()
 
-The **`useEffect()`** hook takes in a function and an array. The function will be executed after the current render process finishes and only if the elements inside the array has changed from the previous render.
+The `useEffect()` hook takes in a function and an array. The function will be executed after the current render process finishes and only if the elements inside the array has changed from the previous render.
 
 This hook can be used to run side effects (call to an external API, update another state, etc.) or attach event listeners.
 
-### Syntax
+**Syntax**
 
 The `useEffect()` hook accepts a function and an array of dependencies as its first and second parameter respectively. This hook doesn’t return any value.
 
@@ -304,7 +303,7 @@ useEffect(
 );
 ```
 
-### Example
+**Example**
 
 In the following example, the `useEffect()` hook attaches a `'scroll'` listener to the `window` object and removes it with a cleanup function:
 
@@ -330,7 +329,7 @@ function PageWrapper() {
 
 The **`useRef()`** hook in React is used to create mutable references to elements or values within functional [[#Components]]. It enables direct access and interaction with DOM elements, allowing the persistence of data across renders without triggering re-renders.
 
-### Syntax
+**Syntax**
 
 In the `useRef()` hook, the `initialValue` is an optional parameter that can be provided when creating a new ref object.
 
@@ -348,7 +347,7 @@ When `useRef()` is called, it returns a ref object, and this ref object has a�
 
 If no `initialValue` is provided, `myRef.current` will be null by default.
 
-### Example 1
+**Example 1**
 
 In this example, the `useRef()` hook is used to store the previous value of the count state, allowing the display of the current and previous count values without triggering re-renders.
 
@@ -383,7 +382,7 @@ There is no need to re-render the component just to track the previous value; it
 
 The **`useState()`** hook returns the current [[#State]] of the [[#Components]] and its setter function. State must be changed through the setter only and not be mutated directly as it may cause unexpected behavior.
 
-### Syntax
+**Syntax**
 
 ```jsx
 import React, { useState } from 'react';
@@ -399,7 +398,7 @@ The return value of `useState()` is an array whose elements (the state and se
 
 > **Note:** The name of the setter function should correlate with the name of the `state` value (e.g., `const [time, setTime] = useState(0);`).
 
-### Example 1
+**Example 1**
 
 A controlled input whose value depends on the `name` state and changes it through `setName` setter on `onChange` event.
 
@@ -421,7 +420,7 @@ function ProfileName() {
 }
 ```
 
-### Example 2
+**Example 2**
 
 In cases where the component state is an array or object, the setter function must update with a modified copy of the state, not the original.
 
@@ -547,7 +546,7 @@ const listItems = strings.map((string) => <li>{string}</li>);
 
 JSX does not support `if`/`else` syntax in embedded JavaScript. There are three ways to express conditionals for use with JSX elements:
 
-### Using Ternary Operator
+**Using Ternary Operator**
 
 Using ternary operator within curly braces in JSX:
 
@@ -555,7 +554,7 @@ Using ternary operator within curly braces in JSX:
 const headline = <h1>{age >= drinkingAge ? 'Buy Drink' : 'Do Teen Stuff'}</h1>;
 ```
 
-### Using `if` Statement
+**Using `if` Statement**
 
 Using `if`/`else` statement outside of JSX element:
 
@@ -571,7 +570,7 @@ if (age >= drinkingAge) {
 const headline = <h1>{text}</h1>;
 ```
 
-### Using `&&` Operator
+**Using `&&` Operator**
 
 Using `&&` AND operator:
 
