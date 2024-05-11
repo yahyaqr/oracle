@@ -383,7 +383,7 @@ logAgeAndName('Mulan', 16);
 
 The last use of `logAgeAndName()` shows that the order of the parameters passed to the function matter. The first argument is expected to be of type `number` while the second is inferred to be of type `string`.
 
-### Optional Parameters
+**Optional Parameters**
 
 Function parameters can be made optional by adding a `?` question mark after their name, before any type annotation. TypeScript will understand that they don’t need to be provided when the function is invoked. Additionally, their type is a union that includes `undefined`. This means that if a given function does not use the optional parameter, its value is set to `undefined`.
 
@@ -749,7 +749,7 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-### Return Types
+**Return Types**
 
 In TypeScript, add a type annotation to a `Promise` to indicate the type of value it resolves to. If not defined, it defaults to `any`. For example, to indicate a type of `string`:
 
