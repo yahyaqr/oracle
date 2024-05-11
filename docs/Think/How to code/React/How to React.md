@@ -1,5 +1,3 @@
-# How to React
-
 React is a free and open-source JavaScript library for building user interfaces or front-end webpage components such as forms along with fields like text areas and buttons.
 
 Since its release in 2013, React has been maintained by Meta (formerly Facebook) along with a community of developers and companies.
@@ -7,14 +5,14 @@ Since its release in 2013, React has been maintained by Meta (formerly Facebook)
 It is component-based. An example of a component could be a form or even just a form field or button on a website. In React, applications are completely built with components.
 
 Some of the most persistent issues of front-end development are solved with React, allowing one to build dynamic and interactive web apps with ease. It is fast, scalable, flexible, powerful, and has a robust developer community that’s rapidly growing.
-# Components
+## Components
 
 In React, **components** are pieces of reusable, independent code that make up the user interface (UI) of the application. Each component comes with one or both of the following:
 
 - A [[#state]] object that contains component data that is expected to change over time.
 - A [[#props]] object with data that can be passed down from parent component to child component.
 
-## Class Components
+#### Class Components
 
 Class components contain a state and use a `render()` function to return [[#JSX]] markup. When defined, the `class` has to be an extension of the `React.Component` class:
 
@@ -39,7 +37,7 @@ class ClassComponent extends React.Component {
 ```
 
 
-## Function Components
+#### Function Components
 
 Function components are stateless and only use the `return` statement. No import statement necessary:
 
@@ -53,7 +51,7 @@ function FunctionComponent(props) {
 }
 ```
 
-## Arrow Function
+#### Arrow Function
 
 The arrow function is a feature that was introduced in ES6. It uses the `=` and `>` characters to define a function like a variable. In React, function components can be defined with this syntax:
 
@@ -67,19 +65,19 @@ const FunctionComponent = (props) => {
 }
 ```
 
-# Context
+## Context
 
 The **Context** API in [[#React]] is an easy way to manage the state of some information. It lets the parent [[#Components]] pass the information down to any other component further down the tree hierarchy without needing to pass it as a [[#Props]] It can be used in combination with the [[#useState()]] hook to change the state. Typical use cases are passing themes (e.g. color, paddings, font sizes, etc.) or the authenticated user.
 
-## Benefit
+#### Benefit
 
 Normally, information on values is passed between components as props. But sometimes it has to be passed down several levels in the tree, also called `prop drilling`. In larger applications, this can be complicated and lead to code that is hard to maintain. With `Context` this is no longer necessary.
 
-## API Implementation
+#### API Implementation
 
 To implement the Context API, it’s necessary to first create the Context using [[#createContext()]]. Afterward, the [[#useContext()]] hook can be used to read the context from the appropriate component.
 
-## createContext()
+#### createContext()
 
 The **createContext()** function is used to create an instance of the [[#Context]] API that other components can read. It should be used in combination with the [[#useContext()]] hook.
 
@@ -114,7 +112,7 @@ Components have to use the [[#useContext()]] hook to get the context informati
 
 > **Note**: In legacy code, there may not only be `Providers` but also `Consumers` that wrap the components. This is no longer recommended.
 
-# Hooks
+## Hooks
 
 In React, **hooks** are functions that give class-like abilities to function [[#Components]], including [[#State]] and side-effects.
 
@@ -133,7 +131,7 @@ Hooks are imported at the top of a file from the `react` library:
 
 > **Note:** The code snippet above is purely pseudocode and useHook is not an actual React hook.
 
-## useContext()
+#### useContext()
 
 The **`useContext()`** hook subscribes a child [[#Components]] to a [[#Context]] which includes its `value` [[#Props]] that exists further up the component tree.
 
@@ -269,7 +267,7 @@ export function Display() {
 }
 ```
 
-## useEffect()
+#### useEffect()
 
 The `useEffect()` hook takes in a function and an array. The function will be executed after the current render process finishes and only if the elements inside the array has changed from the previous render.
 
@@ -327,7 +325,7 @@ function PageWrapper() {
 }
 ```
 
-## useRef()
+#### useRef()
 
 The **`useRef()`** hook in React is used to create mutable references to elements or values within functional [[#Components]]. It enables direct access and interaction with DOM elements, allowing the persistence of data across renders without triggering re-renders.
 
@@ -380,7 +378,7 @@ To store the previous count value in a state variable (using `useState()`), eac
 
 There is no need to re-render the component just to track the previous value; it’s only necessary to update the value without causing a re-render. So the `useRef()` hook is used.
 
-## useState()
+#### useState()
 
 The **`useState()`** hook returns the current [[#State]] of the [[#Components]] and its setter function. State must be changed through the setter only and not be mutated directly as it may cause unexpected behavior.
 
@@ -455,7 +453,7 @@ function FavoriteFoodList() {
 }
 ```
 
-# JSX
+## JSX
 
 JSX is a syntax extension of JavaScript that combines the JavaScript and HTML-like syntax to provide highly functional, reusable markup. It’s used to create DOM elements which are then rendered in the React DOM.
 
@@ -463,7 +461,7 @@ While not required in React, JSX provides a neat visual reqresentation of the ap
 
 A JavaScript file containing JSX will have to be compiled before it reaches a web browser.
 
-## Syntax
+#### Syntax
 
 JSX looks a lot like HTML:
 
@@ -493,7 +491,7 @@ const App = () => {
 };
 ```
 
-## JSX Attributes
+#### JSX Attributes
 
 The syntax of JSX attributes closely resembles that of HTML attributes.
 
@@ -503,7 +501,7 @@ const example = <h1 id="example">JSX Attributes</h1>;
 
 In the block of code, inside of the opening tag of the `<h1>` JSX element, we see an `id` attribute with the value `"example"`.
 
-## Nested JSX Elements
+#### Nested JSX Elements
 
 In order for the code to compile, a JSX expression must have exactly one outermost element. In the below block of code, the `<a>` tag is the outermost element.
 
@@ -514,7 +512,7 @@ const myClasses = (
   </a>
 );
 ```
-## Multiline JSX Expression
+#### Multiline JSX Expression
 
 A JSX expression that spans multiple lines must be wrapped in parentheses `(` and `)`.
 
@@ -530,7 +528,7 @@ const myList = (
 
 Here, we see the opening parentheses on the same line as the constant declaration, before the JSX expression begins. We see the closing parentheses on the line following the end of the JSX expression.
 
-## JSX with `.map()` Method
+#### JSX with `.map()` Method
 
 The array method `.map()` comes up often in React. It’s good to get in the habit of using it alongside JSX.
 
@@ -544,7 +542,7 @@ const listItems = strings.map((string) => <li>{string}</li>);
 <ul>{listItems}</ul>;
 ```
 
-## JSX Conditionals
+#### JSX Conditionals
 
 JSX does not support `if`/`else` syntax in embedded JavaScript. There are three ways to express conditionals for use with JSX elements:
 
@@ -589,7 +587,7 @@ const update = (
 );
 ```
 
-# Lifecycle Methods
+## Lifecycle Methods
 
 In React, **lifecycle methods** are unique event listeners that listen for changes during certain points during a [[#Components]]‘s lifecycle. A component’s lifecycle usually runs in this order:
 
@@ -600,7 +598,7 @@ In React, **lifecycle methods** are unique event listeners that listen for cha
 
 Lifecycle methods were originally exclusive to class components. But thanks to React [[#Hooks]], even functional component’s can work with their lifecycle.
 
-## Rendering/Mounting a Component
+#### Rendering/Mounting a Component
 
 After a component is first created and `render()`ed to the DOM, it is “mounted”. The method used here is called `componentDidMount()`, which occurs after the component is rendered.
 
@@ -628,7 +626,7 @@ And the output should be this:
 Rendering...
 Component has mounted!
 ```
-## Updating a Component
+#### Updating a Component
 
 When changes are made to a component, usually to its `state`, it is in the update-phase of its lifecycle. This is handled by the `componentDidUpdate()` method.
 
@@ -679,7 +677,7 @@ Rendering...
 Component updated. Count is now 2.
 ```
 
-## Catching Errors in Components
+#### Catching Errors in Components
 
 Prior to React 16, there were no features that handled errors being thrown during the component tree’s “rendering” phase. When this occurred, the following would happen:
 
@@ -760,7 +758,7 @@ class App extends React.Component {
 
 > **Note:** `getDerivedStateFromError()` and `componentDidCatch()` are only able to work with errors strictly related to their child components. They are not compatible with errors related to event handlers.
 
-## Unmounting a Component
+#### Unmounting a Component
 
 When a component is unmounted, it is considered to be at the end of its lifecycle within the React application. The associated lifecycle method is `componentWillUnmount()`, which executes when React anticipates its host-component will be destroyed.
 
@@ -836,7 +834,7 @@ class App extends React.Component {
 }
 ```
 
-# Props
+## Props
 
 In React, components are able to use props, or “properties”, to display and share data throughout the application. In other words, props is the information that gets passed from one component to another.
 
@@ -847,7 +845,7 @@ Parent components can pass props to their child components, but not the other wa
 - Functions
 - Objects
 
-## Syntax
+#### Syntax
 
 ```jsx
 import React from 'react';
@@ -863,7 +861,7 @@ function ChildComponent(props) {
 }
 ```
 
-## `this.props`
+#### `this.props`
 
 Every component has something called `props`.
 
@@ -879,7 +877,7 @@ render() {
 }
 ```
 
-## Pass `props` to a Component
+#### Pass `props` to a Component
 
 You can pass information to a React component. How? By giving that component an attribute:
 
@@ -909,7 +907,7 @@ In this next example, we pass several pieces of information to `<Greeting />`. 
 <Greeting name="Frarthur" town="Flundon" age={2} haunted={false} />
 ```
 
-## Displaying the Props
+#### Displaying the Props
 
 You will often want a component to display the information that you pass.
 
@@ -931,13 +929,13 @@ class Greeting extends React.Component {
 ReactDOM.render(<Greeting firstName="Rybu" />, document.getElementById('app'));
 ```
 
-# React Native
+## React Native
 
 [**React Native**](https://reactnative.dev/) is an open-source mobile development framework that works across different operating systems such as iOS and Android. It was released in 2015 by Facebook (now Meta) and can be used on many smart devices, such as phones, personal computers, and TVs, to provide a consistent interface and user experience.
 
 Traditional mobile app development required multiple codebases for each operating system along with their associated programming languages (e.g., Swift for iOS or Java or Kotlin for Android). However, React Native provides a single codebase written in [[#React]]-based JavaScript and rendered in the device’s native language.
 
-## Getting Started
+#### Getting Started
 
 React Native can be installed, configured, and used in two ways:
 
@@ -946,7 +944,7 @@ React Native can be installed, configured, and used in two ways:
 
 [[How to React Native]] describes the appearance and behavior of the UI of a mobile application.
 
-# Routing
+## Routing
 
 In React, routing is most commonly achieved through React Router.
 
@@ -967,7 +965,7 @@ The newest version of React Router is [v6](https://reactrouter.com/en/6.10.0/st
 - Using a `<Routes />` component instead of a `<Switch />` component for `<Route />` configuration.
 - Using the `element` attribute instead of `component` when passing a JSX to a `<Link />`.
 
-## Example
+#### Example
 
 Below, a `<BrowserRouter/>` (aliased as `<Router/>`) is used to map the navigation `<Link/>` components to a `<Routes/>` component. The `<Routes/>` renders the appropriate `<Route>` based on the most specific-matching `path` among all possible matches.
 
@@ -1028,7 +1026,7 @@ const Contact = () => {
 export default App;
 ```
 
-# State
+## State
 
 The **`state`** object holds data in a [[#Components]] that is expected to change over time. It is created and maintained by the component itself, and when it changes, the component re-renders.
 
@@ -1036,7 +1034,7 @@ The **`state`** object holds data in a [[#Components]] that is expected to ch
 
 Class and functional components handle state differently. Functional components use [[#Hooks]] to manage state. The following will address how class components manage state.
 
-## Syntax
+#### Syntax
 
 ```jsx
 class ComponentName extends React.Component {
@@ -1069,7 +1067,7 @@ The snippet above features two common ways of initializing state in a class comp
 
 Only one of these two ways can be applied when making a class component.
 
-## Example
+#### Example
 
 The following example initializes the `state` object in the component’s `constructor()` and returns its value in the `render()` method:
 
@@ -1116,7 +1114,7 @@ class Car extends React.Component {
 }
 ```
 
-# Virtual DOM
+## Virtual DOM
 
 In React, **virtual DOM** is a conceptual representation of the actual DOM object, like a lightweight copy. A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing’s power to directly change what’s on the screen.
 
@@ -1128,7 +1126,7 @@ With virtual DOM, when changes are made to the UI and there’s a re-render, the
 
 The virtual DOM is not to be confused with the Shadow DOM, or any other technology or concept.
 
-## How It Works
+#### How It Works
 
 During a render of a [[#JSX]] element, every single virtual DOM object gets updated. This sounds incredibly inefficient, but the cost is insignificant because the virtual DOM can update so quickly. Once the virtual DOM has updated, then React compares the virtual DOM with a virtual DOM snapshot that was taken right before the update.
 

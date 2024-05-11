@@ -2,7 +2,7 @@ TypeScript is a typed superset of JavaScript that combines the flexibility and g
 
 Code written in TypeScript compiles to regular JavaScript. Anything you write in TypeScript can be run wherever it could be in JavaScript: web browsers, Node servers, and more.
 
-# About TypeScript
+## About TypeScript
 
 [TypeScript](https://www.typescriptlang.org/) is a typed language that checks to see if JavaScript variables are of the correct data type before the code is run. It achieves this by using four tools that build on each other in the following order:
 
@@ -11,11 +11,11 @@ Code written in TypeScript compiles to regular JavaScript. Anything you write in
 3. A type checker program that reads in TypeScript syntax, understands the types of values every entity is meant to be and notices any “type errors” (mismatches)
 4. A language server that editors such as VS Code can run to provide build-time hints and refactoring tools
 
-## History
+#### History
 
 TypeScript was released in October 2012 by Microsoft after two years of development. [Anders Hejlsberg](https://twitter.com/ahejlsberg), the original designer of C#, was the lead designer for the language.
 
-## Installation
+#### Installation
 
 To download the latest stable build via npm, use the following command:
 
@@ -31,17 +31,17 @@ tsc -v
 
 TypeScript was developed by Microsoft and is [available in VSCode](https://code.visualstudio.com/docs/typescript/typescript-tutorial) by default.
 
-## Playground
+#### Playground
 
 There’s an interactive playground provided by the TypeScript team at [https://www.typescriptlang.org/play](https://www.typescriptlang.org/play).
 
 It allows you to type in JavaScript or TypeScript code on the left and see the resultant JavaScript output or any TypeScript type errors.
 
-# Arrays
+## Arrays
 
 In TypeScript, arrays are considered to be collections of single, “generic” types of values. All elements must be of the same type of data as prescribed in the array definition.
 
-## Defining an array
+#### Defining an array
 
 Array types can be inferred during the initialization of a new array.
 
@@ -76,7 +76,7 @@ const numbers: (string | number)[] = [1, '2', 3, 'four'];
 
 As long as each element in `numbers` is of type `string` or `number`, it is valid.
 
-## Array Types
+#### Array Types
 
 An array type consists of the type of values inside the array followed by square brackets `[]`.
 
@@ -93,18 +93,18 @@ dates.push(10241995);
 // Error: Argument of type 'number' is not assignable to parameter of type 'Date'.
 ```
 
-# Assignability
+## Assignability
 
 **Assignability** is how TypeScript can determine whether a value of a particular data type can be assigned to a variable of the same (or another) data type.
 
-## When/Where Assignability Takes Place
+#### When/Where Assignability Takes Place
 
 TypeScript performs assignability checks whenever a value is being assigned into another location in the computer’s memory, such as:
 
 - Assigning values to variables.
 - Passing arguments to functions.
 
-## Example: Assigning Matching Data Types
+#### Example: Assigning Matching Data Types
 
 In this snippet of code, TypeScript sees that the `spooky` variable is initially assigned a boolean value, so it believes the `spooky` variable should always be of type `boolean`.
 
@@ -124,7 +124,7 @@ Running the code above will cause the following error:
 Error: Type 'string' is not assignable to type 'boolean'.
 ```
 
-## Examples: Comparing Object Types
+#### Examples: Comparing Object Types
 
 When comparing object types, TypeScript will ensure that all the required fields exist in the assigning object type. It will also ensure that all field that do exist on the types match up.
 
@@ -180,11 +180,11 @@ Property 'scary' is missing in type '{ spooky: false; }'
 but required in type 'Skeleton'.
 ```
 
-# Classes
+## Classes
 
 With TypeScript, **`class`** objects can use type annotation to describe the relationship between class members and their static types. Classes are a core part of the JavaScript language that TypeScript respects. In addition to type annotations, TypeScript adds a few new syntaxes to help write classes in a type-safe manner.
 
-## Members
+#### Members
 
 Class member types work similarly to parameter and variable types.
 
@@ -211,7 +211,7 @@ myBox.count; // Type: number
 myBox.value; // Type: string
 ```
 
-## Member Visibility
+#### Member Visibility
 
 JavaScript has a `#` syntax to mark a member as private, meaning it can only be accessed inside its class:
 
@@ -240,7 +240,7 @@ class 'Secret' because it has a private identifier.
 */
 ```
 
-## Public, Private, or Protected
+#### Public, Private, or Protected
 
 Separately, TypeScript also supports adding `public`, `protected`, or `private` in front of a class member to indicate whether the member may be used outside that class.
 
@@ -326,7 +326,7 @@ class 'Base' because it has a private identifier.
 */
 ```
 
-## Implementing Interfaces
+#### Implementing Interfaces
 
 Classes can use the TypeScript `interface` keyword to further define the “shape” of the class object. This means that instances of the class are assignable to a given interface type.
 
@@ -358,11 +358,11 @@ Classes can implement more than one interface, as well, by a comma-separated (`,
 
 Marking a class as implementing an interface doesn’t change anything about the class itself; it won’t change the types of any members or implicitly add them to the class. It’s purely a way to make sure the class implements the interface properly where it’s declared, rather than when instances of the class happen to not match up with an interface.
 
-# Functions
+## Functions
 
 With **functions**, TypeScript infers the types of its parameters as well as any return value.
 
-## Function Parameters
+#### Function Parameters
 
 The types of function parameters work similarly to variable declarations. If the parameter has a default value, it will take on the type of that value. Otherwise, we may declare the type of that parameter by adding a type annotation after its name.
 
@@ -405,7 +405,7 @@ logFavoriteNumberAndReason();
 // Error: Expected 1-2 arguments, but got 0.
 ```
 
-## Return Types
+#### Return Types
 
 Most functions are written in a way that TypeScript can infer what value they return by looking at all the `return` statements in the function. Functions that don’t return a value are considered to have a return type of `void`.
 
@@ -445,7 +445,7 @@ function fibonacci(i: number): number {
 }
 ```
 
-## Function Types
+#### Function Types
 
 Function types may be represented in the type system. They look a lot like an arrow lambda, but with the return type instead of the function body.
 
@@ -466,11 +466,11 @@ withIncrementedValue((receivedValue) => {
 
 Function parameter types may be inferred if their parent function is in a location with a known function type. In the prior example, the `receivedValue` parameter was inferred to be type `number`.
 
-# Generics
+## Generics
 
 In TypeScript, **generics** are used to assign multiple types to a function or variable without the value losing that specific type information upon return. The `any` keyword is similar in that it accommodates any and all types. However, it will not retain specific type information.
 
-## Syntax
+#### Syntax
 
 Generics are defined with `<` `>` brackets surrounding name(s) of the generic type(s), like `Array<T>` or `Map<Key, Value>`.
 
@@ -489,7 +489,7 @@ Generic types can be used with the following:
 - [Interfaces](https://www.codecademy.com/resources/docs/typescript/interfaces)
 - [Type aliases](https://www.codecademy.com/resources/docs/typescript/type-aliases)
 
-## Example of Using Generics
+#### Example of Using Generics
 
 In the following snippet, `Box<Value>` is a generic `interface` that with a generic `Value` type within. Next, two variables, `numberBox` and `stringBox`, are explicitly declared to be of type `Box<number>` and `Box<string>`, respectively:
 
@@ -501,7 +501,7 @@ interface Box<Value> {
 let numberBox: Box<number> = { value: 7 };
 let stringBox: Box<string> = { value: 'Marathon' };
 ```
-## Inferring Generic Types
+#### Inferring Generic Types
 
 Generics can be inferred from usage when not explicitly provided.
 
@@ -538,11 +538,11 @@ const store = new KeyValueStore('year', 2794);
 const pair = store.makePair(); // Type: [string, number]
 ```
 
-# Interfaces
+## Interfaces
 
 Interfaces are used to “shape” an object by describing a certain set of members and/or type annotations.
 
-## Syntax
+#### Syntax
 
 Interfaces may be declared by:
 
@@ -559,7 +559,7 @@ interface myType {
 let myVar: myType = {"My favorite number is ", 42 };
 ```
 
-## `Dog` Interface Example
+#### `Dog` Interface Example
 
 In this example, the `Dog` interface declares `fluffy` and `woof` members. Any value declared to be of type `Dog` is therefore known to have those members:
 
@@ -583,7 +583,7 @@ function interactWithDog(dog: Dog) {
 
 Members that do not exist in the interface, such as `bark()`, cannot be accessed and will throw a type error
 
-## Optional Members
+#### Optional Members
 
 Here, the `Pet` interface uses `?` to set `name` as an optional member. The only member that is required is `species`. Declaring an object of type `Pet` doesn’t need a `name` but does need a `species`:
 
@@ -609,7 +609,7 @@ let invalid: Pet = {
 // '{ name: string; }' but required in type 'Pet'.
 ```
 
-## Interface Extensions
+#### Interface Extensions
 
 Interfaces may be marked as _extending_ another interface. Doing so indicates that the derived child interface (the interface extending others) includes all members from the base parent interfaces (the interface being extended).
 
@@ -642,13 +642,13 @@ function workWithAnimals(animal: Animal, cat: Cat) {
 }
 ```
 
-# Narrowing
+## Narrowing
 
 **Narrowing** is a TypeScript process that refines a value of multiple types into a single, specific type.
 
 [Union types](https://www.codecademy.com/resources/docs/typescript/unions) represent entities that may be one of two or more different types. Because they only allow access to members known to be on all possible types, we need to narrow down a value to a more specific type before using non-shared members.
 
-## Where Narrowing Happens
+#### Where Narrowing Happens
 
 TypeScript recognizes types as being narrowed when it sees branches of JavaScript control-flow logic, including:
 
@@ -658,7 +658,7 @@ TypeScript recognizes types as being narrowed when it sees branches of JavaScrip
 
 If an area of code can only be reached if a value is of a particular type, TypeScript will infer the value to be of that type in that control flow branch.
 
-## Example: Narrowing with `if` Statement
+#### Example: Narrowing with `if` Statement
 
 In this example, our `logValueIfExists()` function accepts a `value` parameter with a union-type of `string | undefined`. If we want TypeScript to explicitly narrow our `value` down to a `string` type, we can use an `if` statement to act as a “type guard”.
 
@@ -675,7 +675,7 @@ logValueIfExists('narrowing');
 
 We invoked `logValueIfExists()` with a string variable, “narrowing”. Since the `value` is of type `string`, the code in the `if` statement will run and a new string will be logged to the console.
 
-## Example: Narrowing With Truthiness
+#### Example: Narrowing With Truthiness
 
 In the example below, we changed the `if` statement slightly to check if `value` has any value that is “truthy” and doesn’t evaluate to a falsey value such as `0`, `false`, or `undefined`.
 
@@ -703,7 +703,7 @@ logValueIfExists(newValue);
 
 Outside of the `if` statement, `value` is a union type (`string | undefined`) and is not narrowed, meaning that calling `value.length` won’t work. Inside the `if` statement, because `value` was narrowed to a `string` type, it now has a `length` property.
 
-# Primitives
+## Primitives
 
 TypeScript supports primitives, which are the basic types in JavaScript that make up data other than functions and objects. TypeScript recognizes the following seven primitive types in JavaScript:
 
@@ -732,11 +732,11 @@ In other words:
 - A primitive is a basic type of data, such as `number` or `string`
 - A literal is an example of a primitive with a value, such as `1337` or `"ghost"`
 
-# Promises
+## Promises
 
 In TypeScript, **promises** handle asynchronous operations, providing better control over the flow of code.
 
-## Creating Promises
+#### Creating Promises
 
 To create a new promise, use the `new` keyword followed by `Promise`. The `Promise` constructor accepts a function which should take two parameters:
 
@@ -763,7 +763,7 @@ Here, `myPromise` is a promise that resolves to a string. If a different type 
 
 > **Note**: The type annotation for promises is used for the value the promise is resolved to, not the value it is rejected with. All rejected promises should be rejected with an `Error` to ensure consistency.
 
-## Handling Promises
+#### Handling Promises
 
 Once a promise is declared, use the `.then()` and `.catch()` methods to handle the success or failure of the asynchronous operation. The `.then()` method is called when the `Promise` is resolved, while the `.catch()` method is called when it is rejected.
 
@@ -777,7 +777,7 @@ myPromise
   });
 ```
 
-## `async`/`await`
+#### `async`/`await`
 
 TypeScript also supports the `async`/`await` syntax, which is a more readable and an alternative way to handle promises.
 
@@ -794,7 +794,7 @@ async function myAsyncFunction() {
 
 The `async` keyword indicates that a function returns a `Promise`, and the `await` keyword is used to wait for the promise to be resolved. The `try`/`catch` block is used to handle rejected promises.
 
-# Tuples
+## Tuples
 
 In TypeScript, tuple types are defined as array-like containers with a fixed sized and the types of each member element already set.
 
@@ -803,7 +803,7 @@ They have two distinct features:
 - They know their size as well as exactly how many elements it contains.
 - They already know the data type of each element.
 
-## Syntax
+#### Syntax
 
 Tuples can have a mix of different data types and look like an array consisting of types as values inside:
 
@@ -813,7 +813,7 @@ type myTuple: [string, number, boolean] = ["1", 2, true];
 
 They consist of a left square bracket `[`, comma-separated list of types, and a right square bracket `]`. The literal values, “1”, 2, and `true`, must map to each element’s types, `string`, `number`, and `boolean`, in the correct order.
 
-## Destructuring a Tuple
+#### Destructuring a Tuple
 
 Like arrays and objects, tuples can be deconstructed into new variables that represents each element and their type. For example, here is a variable, `popStar`, with a given tuple type. One the other line, the `popStar` is destructured into four separate variables through its tuple type:
 
@@ -848,7 +848,7 @@ They are still active in the industry.
 One of their most famous songs is Old Town Road
 ```
 
-## Storing Returned Values in Tuples
+#### Storing Returned Values in Tuples
 
 Tuples are particularly useful for representing multiple return values from functions, or groups of values that are meant to be used together.
 
@@ -865,11 +865,11 @@ difference; // Type: number, Value: 42
 isPositive; // Type: boolean, Value: false
 ```
 
-# Type Aliases
+## Type Aliases
 
 In TypeScript, **type aliases** create type definitions that can be reused throughout the code. This is unlike type unions and intersections, where the explicit type information is used repetitively.
 
-## Syntax
+#### Syntax
 
 Type aliases require the `type` keyword and a name. They can be created in two ways.
 
@@ -895,7 +895,7 @@ let favoriteNum: myType = '42';
 
 Later on, whenever the name is used, TypeScript will assume this refers to the aliased value. Type aliases are similar to `interface`s in terms of syntax and behavior. However, a key difference is that an `interface` can have members added later on whereas type aliases can’t be changed after being defined.
 
-## Type Aliases with Type Guards
+#### Type Aliases with Type Guards
 
 In this example, the `StringsIsh` type alias can be used in place of the type union with several members. When applied to the `logAllStrings()` function:
 
@@ -918,7 +918,7 @@ logAllStrings(['hello', 'world']); // Also Ok
 
 The first type guard checks to see if `values` matches either `null` or `undefined` in the `StringIsh` type alias. Next, the `if/else`-statement checks for a base case of `values` being of type `string`. Otherwise, it recursively invokes `logAllStrings` again.
 
-## Type Aliases as Generics
+#### Type Aliases as Generics
 
 Type aliases may be generic and may contain any type description, including:
 
@@ -936,13 +936,13 @@ let value: Result<string> = 'hello'; // Ok
 let other: Result<string> = { value: 'world' }; // Also Ok
 ```
 
-# Type Annotations
+## Type Annotations
 
 TypeScript uses type annotation to explicitly type things such as variables, functions, and classes.
 
 For the most part, TypeScript does a good job at inferring types from the codebase at build-time. However, some constructs in TypeScript, such as variables without an initial value or members of interfaces, don’t have an initially inferable type. This is where type annotations can be really useful.
 
-## Syntax
+#### Syntax
 
 Type annotations consist of a `:` colon followed by the name of a type. They exist after the name of the construct they’re declaring the type for.
 
@@ -975,7 +975,7 @@ function myFunc(memberOne, memberTwo): string {
 let myVar: string = "Hello, World!";
 ```
 
-## Type Annotations and `Date`s
+#### Type Annotations and `Date`s
 
 In the following code snippet, the `date` variable doesn’t have an initial value, but with a `Date` type annotation. Later on, when `date` is assigned a value, it must receive a value of type `Date`. The first assignment of a new `Date` is the right type. However, the second assignment to a number, `10.31`, is not:
 
@@ -988,7 +988,7 @@ date = 10.31;
 // Error: type 'number' is not assignable to type 'Date'.
 ```
 
-## After TypeScript is Compiled
+#### After TypeScript is Compiled
 
 TypeScript type annotations don’t get compiled down to the output JavaScript, as they are a TypeScript syntax and not JavaScript. Removing comments from the above code would make it look roughly like this if run through the TypeScript compiler (`tsc`):
 
@@ -998,11 +998,11 @@ date = new Date('2021-10-31');
 date = 10.31;
 ```
 
-# Unions
+## Unions
 
 Some values may be one of multiple possible types. TypeScript refers to these “either or” types as type unions. This refers to the set theory concept of being a “union” of multiple possible types.
 
-## Syntax
+#### Syntax
 
 A union type is written as a series of other types with a `|` vertical pipe between them.
 
@@ -1010,7 +1010,7 @@ A union type is written as a series of other types with a `|` vertical pipe be
 let myVar: number | string = '42';
 ```
 
-## Union Example
+#### Union Example
 
 For example, the following `logEither()` function takes in a value that can be either a `number` or `string`:
 
@@ -1028,7 +1028,7 @@ logEither(false);
 
 Optional values, including optional parameters and members, are implicitly type `| undefined`.
 
-## Union type Members
+#### Union type Members
 
 When a value is a union type, TypeScript will only allow access to members that exist on all possible types.
 
@@ -1055,11 +1055,11 @@ value.length;
 
 See [[#Narrowing]] for how to narrow down union types into their more specific types.
 
-# Variables
+## Variables
 
 In TypeScript, besides being typed, variables are expected to follow the same rules and guidelines that they do with JavaScript.
 
-## Syntax
+#### Syntax
 
 TypeScript variables are generally inferred to be whatever basic type of value they are initially assigned with. Later in code, only values that are of that same basic type may be assigned to the variable. The term for whether a type is assignable to another type is assignability.
 
@@ -1071,7 +1071,7 @@ myVar = 'World!'; // Also Ok
 myVar = 42; // Not Ok: Type 'number' is not assignable to type 'string'.
 ```
 
-## Examples with Variables
+#### Examples with Variables
 
 In this snippet of code, TypeScript sees that the `spooky` variable is initially assigned a `boolean` value, so it believes the `spooky` variable should always be of type `boolean`. Assigning a variable of type `boolean` later on is allowed, as a type is assignable to itself:
 
