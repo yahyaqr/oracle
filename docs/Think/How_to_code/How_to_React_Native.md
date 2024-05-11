@@ -30,7 +30,7 @@ Components can also be custom-built; there’s a big ecosystem of these communit
 
 ### Examples
 
-React Native uses the same component syntax structure for its views to display elements to the screen, like in [[How to React]]. The following examples are of a `Box` component defined as both a class and functional component:
+React Native uses the same component syntax structure for its views to display elements to the screen, like in [[How_to_React]]. The following examples are of a `Box` component defined as both a class and functional component:
 
 ```jsx
 import React, { Component } from 'react';
