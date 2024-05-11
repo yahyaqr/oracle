@@ -196,7 +196,7 @@ setUser(newUser);
 
 This temporarily "lies" to the TypeScript compiler that `{}` is of type `User`. You should follow up by setting the `user` state — if you don't, the rest of your code may rely on the fact that `user` is of type `User` and that may lead to runtime errors.
 
-##@# useCallback
+### useCallback
 
 You can type the `useCallback` just like any other function.
 
