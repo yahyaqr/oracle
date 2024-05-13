@@ -1,3 +1,6 @@
+## CP
+Python: https://github.com/peterlamar/python-cp-cheatsheet/blob/master/readme.md
+JS: 
 ## How to ES6
 ### Built-ins
 ```js
