@@ -4,7 +4,7 @@ A container is an isolated environment for your code. This means that a containe
 
 In this walkthrough, you'll view and explore an actual container in Docker Desktop.
 
-### Step 1: Set up the walkthrough
+### 1. Set up the walkthrough
 
 The first thing you need is a running container. Use the following instructions to run a container.
 
@@ -18,23 +18,23 @@ The first thing you need is a running container. Use the following instructions 
     
 6. Select **Run**.
 
-### Step 2: View containers on Docker Desktop
+### 2. View containers on Docker Desktop
 
 You just ran a container! You can view it in the **Containers** tab of Docker Desktop. This container runs a simple web server that displays a simple website. When working with more complex projects, you'll run different parts in different containers. For example, a different container for the frontend, backend, and database. In this walkthrough, you only have a simple frontend container.
 
-### Step 3: View the frontend
+### 3. View the frontend
 
 The frontend is accessible on port 8088 of your local host. Select the link in the **Port(s)** column of your container, or visit [http://localhost:8088](http://localhost:8088/) in your browser to view it.
 
 ![Accessing container frontend from Docker Desktop](https://docs.docker.com/guides/walkthroughs/images/getting-started-frontend.webp?border=true)
 
-### Step 4: Explore your container
+### 4. Explore your container
 
 Docker Desktop lets you easily view and interact with different aspects of your container. Try it out yourself. Select your container and then select **Files** to explore your container's isolated file system.
 
 ![Viewing container details in Docker Desktop](https://docs.docker.com/guides/walkthroughs/images/getting-started-explore-container.webp?border=true)
 
-### Step 5: Stop your container
+### 5. Stop your container
 
 The `welcome-to-docker` container continues to run until you stop it. To stop the container in Docker Desktop, go to the **Containers** tab and select the **Stop** icon in the **Actions** column of your container.
 
@@ -50,7 +50,7 @@ In this walkthrough, you'll learn the basic steps of building an image and runni
 
 ![Running an image in Docker Desktop](https://docs.docker.com/guides/walkthroughs/images/getting-started-run-intro.webp?w=450&border=true)
 
-### Step 1: Get the sample application
+### 1. Get the sample application
 
 If you have git, you can clone the repository for the sample application. Otherwise, you can download the sample application. Choose one of the following options.
 
@@ -60,11 +60,11 @@ Use the following command in a terminal to clone the sample application reposito
 $ git clone https://github.com/docker/welcome-to-docker
 ```
 
-### Step 2: View the Dockerfile in your project folder
+### 2. View the Dockerfile in your project folder
 
 To run your code in a container, the most fundamental thing you need is a Dockerfile. A Dockerfile describes what goes into a container. This sample already contains a `Dockerfile`. For your own projects, you'll need to create your own `Dockerfile`. You can open the `Dockerfile` in a code or text editor and explore its contents.
 
-### Step 3: Build your first image
+### 3. Build your first image
 
 You always need an image to run a container. In a terminal, run the following commands to build the image. Replace `/path/to/welcome-to-docker/` with the path to your `welcome-to-docker` directory.
 
@@ -80,7 +80,7 @@ In the previous command, the `-t` flag tags your image with a name, `welcome-
 
 Building the image may take some time. After your image is built, you can view your image in the **Images** tab in Docker Desktop.
 
-### Step 4: Run your container
+### 4. Run your container
 
 To run your image as a container:
 
@@ -93,7 +93,7 @@ To run your image as a container:
     
 5. Select **Run**.
 
-### Step 5: View the frontend
+### 5. View the frontend
 
 You can use Docker Desktop to access your running container. Select the link next to your container in Docker Desktop or go to [http://localhost:8089](http://localhost:8089/) to view the frontend.
 
@@ -107,7 +107,7 @@ In this walkthrough, you built your own image and ran it as a container. In addi
 
 You can share and store images in Docker Hub ([http://hub.docker.com](http://hub.docker.com/)). Docker Hub has over 100,000 images created by developers that you can run locally. You can search for Docker Hub images and run them directly from Docker Desktop.
 
-### Step 1: Search for the image
+### 1. Search for the image
 
 You can search for Docker Hub images on Docker Desktop. To search for the image used in this walkthrough:
 
@@ -116,7 +116,7 @@ You can search for Docker Hub images on Docker Desktop. To search for the image 
 
 ![Search Docker Desktop for the welcome-to-docker image](https://docs.docker.com/guides/walkthroughs/images/getting-started-search.webp?w=650&border=true)
 
-### Step 2: Run the image
+### 2. Run the image
 
 To run the `docker/welcome-to-docker` image:
 
@@ -132,7 +132,7 @@ To run the `docker/welcome-to-docker` image:
 > 
 > Many images hosted on Docker Hub have a description that highlights what settings must be set in order to run them. You can read the description for the image on Docker Hub by selecting the image name in the search or by searching for the image directly on [https://hub.docker.com](https://hub.docker.com/).
 
-### Step 3: Explore the container
+### 3. Explore the container
 
 That's it! The container is ready to use. Go to the **Containers** tab in Docker Desktop to view the container.
 
@@ -146,7 +146,7 @@ In this walkthrough, you searched for an image on Docker Hub and ran it as a con
 
 If you've already completed the [[#How do I run a container?]] walkthrough, you learned that you must start each container individually. Imagine how great it would be if a tool could start multiple containers with a single command. That tool is Docker Compose.
 
-### Step 1: Get the sample application
+### 1. Get the sample application
 
 If you have git, you can clone the repository for the sample application. Otherwise, you can download the sample application. Choose one of the following options.
 
@@ -160,11 +160,11 @@ The sample application is a simple todo application built using ExpressJS and No
 
 ![The sample app architecture](https://docs.docker.com/guides/walkthroughs/images/getting-started-multi-container.webp?w=450&border=true)
 
-### Step 2: Dig into the Compose file
+### 2. Dig into the Compose file
 
 View the files of the sample application. Notice that it has a `compose.yaml` file. This file tells Docker how to run your application. Open the `compose.yaml` file in a code or text editor to view what it contains.
 
-### Step 3: Run the application
+### 3. Run the application
 
 To run the multi-container application, open a terminal and run the following commands. Replace `/path/to/multi-container-app/` with the path to your application's directory.
 
@@ -178,7 +178,7 @@ $ docker compose up -d
 
 In the previous command, the `-d` flag tells Docker Compose to run in detached mode.
 
-### Step 4: View the frontend and add todos
+### 4. View the frontend and add todos
 
 In the **Containers** tab of Docker Desktop, you should now have an application stack with two containers running (the todo-app, and todo-database).
 
@@ -189,7 +189,7 @@ To view the frontend:
 
 Add some todo tasks in the frontend, and then open [http://localhost:3000](http://localhost:3000/) in a new browser tab. Notice that the tasks are still visible.
 
-### Step 5: Develop in your containers
+### 5. Develop in your containers
 
 When developing with Docker, you may need to automatically update and preview your running services as you edit and save your code. You can use Docker Compose Watch for this.
 
@@ -209,7 +209,7 @@ To run Compose Watch and see the real-time changes:
 3. Save the changes in `app/views/todos.ejs`.
 4. View your application at [http://localhost:3000](http://localhost:3000/) to see the changes in real-time.
 
-### Step 6: Delete everything and start over
+### 6. Delete everything and start over
 
 Having your configuration stored in a Compose file has another advantage, you can easily delete everything and start over.
 
@@ -236,7 +236,7 @@ Docker isolates all content, code, and data in a container from your local files
 
 Sometimes, you may want to persist the data that a container generates. To do this, you can use volumes.
 
-### Step 1: Get the sample application
+### 1. Get the sample application
 
 If you have git, you can clone the repository for the sample application. Otherwise, you can download the sample application. Choose one of the following options.
 
@@ -246,7 +246,7 @@ Use the following command in a terminal to clone the sample application reposito
 $ git clone https://github.com/docker/multi-container-app
 ```
 
-### Step 2: Add a volume to persist data
+### 2. Add a volume to persist data
 
 To persist data after you delete a container, use a volume. A volume is a location in your local filesystem, automatically managed by Docker Desktop.
 
@@ -269,7 +269,7 @@ The `volumes` element that is nested under `todo-database` tells Compose to 
 
 The top-level `volumes` element defines and configures a volume named `database` that can be used by any of the services in the Compose file.
 
-### Step 3: Run the application
+### 3. Run the application
 
 To run the multi-container application, open a terminal and run the following commands. Replace `/path/to/multi-container-app/` with the path to your application's directory.
 
@@ -281,7 +281,7 @@ $ cd /path/to/multi-container-app/
 $ docker compose up -d
 ```
 
-### Step 4: View the frontend and add todos
+### 4. View the frontend and add todos
 
 In the **Containers** tab of Docker Desktop, you should now have an application stack with two containers running (the todo-app, and todo-database).
 
@@ -291,7 +291,7 @@ To view the frontend and add todos:
 2. Select the link to port **3000** in the **Port(s)** column or open [http://localhost:3000](http://localhost:3000/)⁠.
 3. Add some todo tasks in the frontend.
 
-### Step 5: Delete the application stack and run new containers
+### 5. Delete the application stack and run new containers
 
 Now, no matter how often you delete and recreate the containers, Docker Desktop persists your data and it's accessible to any container on your system by mounting the `database` volume. Docker Desktop looks for the `database` volume and creates it if it doesn't exist.
 
@@ -317,7 +317,7 @@ Docker isolates all content, code, and data in a container from your local files
 
 Sometimes, you may want to access a directory from your local filesystem. To do this, you can use bind mounts.
 
-### Step 1: Get the sample application
+### 1. Get the sample application
 
 If you have git, you can clone the repository for the sample application. Otherwise, you can download the sample application. Choose one of the following options.
 
@@ -327,7 +327,7 @@ Use the following command in a terminal to clone the sample application reposito
 $ git clone https://github.com/docker/bindmount-apps
 ```
 
-### Step 2: Add a bind mount using Compose
+### 2. Add a bind mount using Compose
 
 Add a bind mount to access data on your system from a container. A bind mount lets you share a directory from your host's filesystem into the container.
 
@@ -345,7 +345,7 @@ todo-app:
 
 The `volumes` element tells Compose to mount the local folder `./app` to `/usr/src/app` in the container for the `todo-app` service. This particular bind mount overwrites the static contents of the `/usr/src/app` directory in the container and creates what is known as a development container. The second instruction, `/usr/src/app/node_modules`, prevents the bind mount from overwriting the container's `node_modules` directory to preserve the packages installed in the container.
 
-### Step 3: Run the application
+### 3. Run the application
 
 In a terminal, run the following commands to bring up your application. Replace `/path/to/bindmount-apps/` with the path to your application's directory.
 
@@ -357,7 +357,7 @@ $ cd /path/to/bindmount-apps/
 $ docker compose up -d
 ```
 
-### Step 4: Develop the application
+### 4. Develop the application
 
 Now, you can take advantage of the container’s environment while you develop the application on your local system. Any changes you make to the application on your local system are reflected in the container. In your local directory, open `app/views/todos.ejs` in a code or text editor, update the `Enter your task` string, and save the file. Visit or refresh [localhost:3001](http://localhost:3001/)⁠ to view the changes.
 
@@ -371,7 +371,7 @@ When working with containers, you typically need to create a `Dockerfile` to d
 
 To help you create these files, Docker Desktop has the `docker init` command. Run this command in a terminal within your project folder. `docker init` creates all the required files to containerize your application. This walkthrough shows you how this works.
 
-### Step 1: Run the command to create Docker assets
+### 1. Run the command to create Docker assets
 
 Choose one of your own applications that you would like to containerize, and in a terminal, run the following commands. Replace `/path/to/your/project/` with the directory containing your project.
 
@@ -383,11 +383,11 @@ $ cd /path/to/your/project/
 $ docker init
 ```
 
-### Step 2: Follow the on-screen prompts
+### 2. Follow the on-screen prompts
 
 `docker init` walks you through a few questions to configure your project with sensible defaults. Specify your answers and press `Enter`.
 
-### Step 3: Try to run your application
+### 3. Try to run your application
 
 Once you have answered all the questions, run the following commands in a terminal to run your project. Replace `/path/to/your/project/` with the directory containing your project.
 
@@ -399,7 +399,7 @@ $ cd /path/to/your/project/
 $ docker compose up
 ```
 
-### Step 4: Update the Docker assets
+### 4. Update the Docker assets
 
 The `docker init` command tries its best to do the heavy lifting for you, but sometimes there's some assembly required. In this case, you can refer to the [Dockerfile reference⁠](https://docs.docker.com/reference/dockerfile/) and [Compose file reference](https://docs.docker.com/compose/compose-file/)⁠ to learn how to update the files created by `docker init`.
 
@@ -411,7 +411,7 @@ In this walkthrough, you learned how to containerize your own application.
 
 Follow this walkthrough to learn how to publish and share your images on Docker Hub.
 
-### Step 1: Get the example image
+### 1. Get the example image
 
 To get the example image:
 
@@ -421,13 +421,13 @@ To get the example image:
 
 ![Search Docker Desktop for the welcome-to-docker image](https://docs.docker.com/guides/walkthroughs/images/getting-started-search.webp?w=650&border=true)
 
-### Step 2: Sign in to Docker
+### 2. Sign in to Docker
 
 Select **Sign in** on the top-right of Docker Desktop to either sign in or create a new Docker account.
 
 ![Signing in to Docker Desktop](https://docs.docker.com/guides/walkthroughs/images/getting-started-signin.webp?w=300&border=true)
 
-### Step 3: Rename your image
+### 3. Rename your image
 
 Before you can publish your image, you need to rename it so that Docker Hub knows that the image is yours. In a terminal, run the following command to rename your image. Replace `YOUR-USERNAME` with your Docker ID.
 
@@ -435,7 +435,7 @@ Before you can publish your image, you need to rename it so that Docker Hub know
 $ docker tag docker/welcome-to-docker YOUR-USERNAME/welcome-to-docker
 ```
 
-### Step 4: Push your image to Docker Hub
+### 4. Push your image to Docker Hub
 
 To push your image to Docker Hub:
 
