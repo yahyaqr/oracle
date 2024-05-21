@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How_to_code/How_to_Flask/Installation.md",
+                "file": "Think/How_to_code/How_to_Python.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How_to_code/How_to_Flask/Installation.md",
+                "file": "Think/How_to_code/How_to_Python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How_to_code/How_to_Flask/Installation.md",
+                "file": "Think/How_to_code/How_to_Python.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How_to_code/How_to_Flask/Installation.md"
+                "file": "Think/How_to_code/How_to_Python.md"
               }
             }
           },
@@ -127,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -142,9 +142,9 @@
   },
   "active": "c62b3a5f94b64285",
   "lastOpenFiles": [
+    "Think/How_to_code/How_to_Flask/Installation.md",
     "Think/How_to_code/How_to_Flask/Tutorial.md",
     "Think/How_to_code/How_to_Flask/Quickstart.md",
-    "Think/How_to_code/How_to_Flask/Installation.md",
     "Think/How_to_code/How_to_Docker.md",
     "Think/How_to_code/How_to_Flask",
     "Think/How_to_code/How_to_Python.md",
