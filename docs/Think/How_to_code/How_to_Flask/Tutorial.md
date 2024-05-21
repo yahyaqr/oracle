@@ -1,6 +1,4 @@
-## Tutorial
-
-### Project Layout
+## Project Layout
 
 Create a project directory and enter it:
 
@@ -92,7 +90,7 @@ build/
 *.egg-info/
 ```
 
-### Application Setup
+## Application Setup
 
 A Flask application is an instance of the [`Flask`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.Flask "flask.Flask") class. Everything about the application, such as configuration and URLs, will be registered with this class.
 
@@ -100,7 +98,7 @@ The most straightforward way to create a Flask application is to create a global
 
 Instead of creating a [`Flask`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.Flask "flask.Flask") instance globally, you will create it inside a function. This function is known as the _application factory_. Any configuration, registration, and other setup the application needs will happen inside the function, then the application will be returned.
 
-#### The Application Factory
+### The Application Factory
 
 It’s time to start coding! Create the `flaskr` directory and add the `__init__.py` file. The `__init__.py` serves double duty: it will contain the application factory, and it tells Python that the `flaskr` directory should be treated as a package.
 
@@ -161,7 +159,7 @@ def create_app(test_config=None):
     
 5. [`@app.route()`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.Flask.route "flask.Flask.route") creates a simple route so you can see the application working before getting into the rest of the tutorial. It creates a connection between the URL `/hello` and a function that returns a response, the string `'Hello, World!'` in this case.
 
-#### Run The Application
+### Run The Application
 
 Now you can run your application using the `flask` command. From the terminal, tell Flask where to find your application, then run it in debug mode. Remember, you should still be in the top-level `flask-tutorial` directory, not the `flaskr` package.
 
@@ -182,7 +180,7 @@ Visit [http://127.0.0.1:5000/hello](http://127.0.0.1:5000/hello) in a browser 
 
 If another program is already using port 5000, you’ll see `OSError: [Errno 98]` or `OSError: [WinError 10013]` when the server tries to start. See [Address already in use](https://flask.palletsprojects.com/en/3.0.x/server/#address-already-in-use) for how to handle that.
 
-### Define and Access the Database
+## Define and Access the Database
 
 The application will use a [SQLite](https://sqlite.org/about.html) database to store users and posts. Python comes with built-in support for SQLite in the [`sqlite3`](https://docs.python.org/3/library/sqlite3.html#module-sqlite3 "(in Python v3.12)") module.
 
@@ -190,7 +188,7 @@ SQLite is convenient because it doesn’t require setting up a separate database
 
 The tutorial doesn’t go into detail about SQL. If you are not familiar with it, the SQLite docs describe the [language](https://sqlite.org/lang.html).
 
-#### Connect to the Database
+### Connect to the Database
 
 The first thing to do when working with a SQLite database (and most other Python database libraries) is to create a connection to it. Any queries and operations are performed using the connection, which is closed after the work is finished.
 
@@ -231,7 +229,7 @@ def close_db(e=None):
 
 `close_db` checks if a connection was created by checking if `g.db` was set. If the connection exists, it is closed. Further down you will tell your application about the `close_db` function in the application factory so that it is called after each request.
 
-#### Create the Tables
+### Create the Tables
 
 In SQLite, data is stored in _tables_ and _columns_. These need to be created before you can store and retrieve data. Flaskr will store users in the `user` table, and posts in the `post` table. Create a file with the SQL commands needed to create empty tables:
 
@@ -278,7 +276,7 @@ def init_db_command():
 
 [`click.command()`](https://click.palletsprojects.com/en/8.1.x/api/#click.command "(in Click v8.1.x)") defines a command line command called `init-db` that calls the `init_db` function and shows a success message to the user. You can read [Command Line Interface](https://flask.palletsprojects.com/en/3.0.x/cli/) to learn more about writing commands.
 
-#### Register with the Application
+### Register with the Application
 
 The `close_db` and `init_db_command` functions need to be registered with the application instance; otherwise, they won’t be used by the application. However, since you’re using a factory function, that instance isn’t available when writing the functions. Instead, write a function that takes an application and does the registration.
 
@@ -309,7 +307,7 @@ def create_app():
     return app
 ```
 
-#### Initialize the Database File
+### Initialize the Database File
 
 Now that `init-db` has been registered with the app, it can be called using the `flask` command, similar to the `run` command from the previous page.
 
@@ -326,11 +324,11 @@ Initialized the database.
 
 There will now be a `flaskr.sqlite` file in the `instance` folder in your project.
 
-### Blueprints and Views
+## Blueprints and Views
 
 A view function is the code you write to respond to requests to your application. Flask uses patterns to match the incoming request URL to the view that should handle it. The view returns data that Flask turns into an outgoing response. Flask can also go the other direction and generate a URL to a view based on its name and arguments.
 
-#### Create a Blueprint
+### Create a Blueprint
 
 A [`Blueprint`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.Blueprint "flask.Blueprint") is a way to organize a group of related views and other code. Rather than registering views and other code directly with an application, they are registered with a blueprint. Then the blueprint is registered with the application when it is available in the factory function.
 
@@ -370,7 +368,7 @@ def create_app():
 
 The authentication blueprint will have views to register new users and to log in and log out.
 
-#### The First View: Register
+### The First View: Register
 
 When the user visits the `/auth/register` URL, the `register` view will return [HTML](https://developer.mozilla.org/docs/Web/HTML) with a form for them to fill out. When they submit the form, it will validate their input and either show the form again with an error message or create the new user and go to the login page.
 
@@ -423,7 +421,7 @@ Here’s what the `register` view function is doing:
 7. If validation fails, the error is shown to the user. [`flash()`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.flash "flask.flash") stores messages that can be retrieved when rendering the template.
 8. When the user initially navigates to `auth/register`, or there was a validation error, an HTML page with the registration form should be shown. [`render_template()`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.render_template "flask.render_template") will render a template containing the HTML, which you’ll write in the next step of the tutorial.
 
-#### Login
+### Login
 
 This view follows the same pattern as the `register` view above.
 
@@ -482,7 +480,7 @@ def load_logged_in_user():
 
 [`bp.before_app_request()`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.Blueprint.before_app_request "flask.Blueprint.before_app_request") registers a function that runs before the view function, no matter what URL is requested. `load_logged_in_user` checks if a user id is stored in the [`session`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.session "flask.session") and gets that user’s data from the database, storing it on [`g.user`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.g "flask.g"), which lasts for the length of the request. If there is no user id, or if the id doesn’t exist, `g.user` will be `None`.
 
-#### Logout
+### Logout
 
 To log out, you need to remove the user id from the [`session`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.session "flask.session"). Then `load_logged_in_user` won’t load a user on subsequent requests.
 
@@ -495,7 +493,7 @@ def logout():
     return redirect(url_for('index'))
 ```
 
-#### Require Authentication in Other Views
+### Require Authentication in Other Views
 
 Creating, editing, and deleting blog posts will require a user to be logged in. A _decorator_ can be used to check this for each view it’s applied to.
 
@@ -515,7 +513,7 @@ def login_required(view):
 
 This decorator returns a new view function that wraps the original view it’s applied to. The new function checks if a user is loaded and redirects to the login page otherwise. If a user is loaded the original view is called and continues normally. You’ll use this decorator when writing the blog views.
 
-#### Endpoints and URLs
+### Endpoints and URLs
 
 The [`url_for()`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.url_for "flask.url_for") function generates the URL to a view based on a name and arguments. The name associated with a view is also called the _endpoint_, and by default it’s the same as the name of the view function.
 
@@ -523,7 +521,7 @@ For example, the `hello()` view that was added to the app factory earlier in t
 
 When using a blueprint, the name of the blueprint is prepended to the name of the function, so the endpoint for the `login` function you wrote above is `'auth.login'` because you added it to the `'auth'` blueprint.
 
-### Template
+## Template
 
 You’ve written the authentication views for your application, but if you’re running the server and try to go to any of the URLs, you’ll see a `TemplateNotFound` error. That’s because the views are calling [`render_template()`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.render_template "flask.render_template"), but you haven’t written the templates yet. The template files will be stored in the `templates` directory inside the `flaskr` package.
 
@@ -533,7 +531,7 @@ In your application, you will use templates to render [HTML](https://developer.
 
 Jinja looks and behaves mostly like Python. Special delimiters are used to distinguish Jinja syntax from the static data in the template. Anything between `{{` and `}}` is an expression that will be output to the final document. `{%` and `%}` denotes a control flow statement like `if` and `for`. Unlike Python, blocks are denoted by start and end tags rather than indentation since static text within a block could change indentation.
 
-#### The Base Layout
+### The Base Layout
 
 Each page in the application will have the same basic layout around a different body. Instead of writing the entire HTML structure in each template, each template will _extend_ a base template and override specific sections.
 
@@ -578,7 +576,7 @@ There are three blocks defined here that will be overridden in the other templat
 
 The base template is directly in the `templates` directory. To keep the others organized, the templates for a blueprint will be placed in a directory with the same name as the blueprint.
 
-#### Register
+### Register
 
 `flaskr/templates/auth/register.html`
 
@@ -606,7 +604,7 @@ A useful pattern used here is to place `{% block title %}` inside `{% blo
 
 The `input` tags are using the `required` attribute here. This tells the browser not to submit the form until those fields are filled in. If the user is using an older browser that doesn’t support that attribute, or if they are using something besides a browser to make requests, you still want to validate the data in the Flask view. It’s important to always fully validate the data on the server, even if the client does some validation as well.
 
-#### Log In
+### Log In
 
 This is identical to the register template except for the title and submit button.
 
@@ -630,7 +628,7 @@ This is identical to the register template except for the title and submit butto
 {% endblock %}
 ```
 
-#### Register A User
+### Register A User
 
 Now that the authentication templates are written, you can register a user. Make sure the server is still running (`flask run` if it’s not), then go to [http://127.0.0.1:5000/auth/register](http://127.0.0.1:5000/auth/register).
 
@@ -638,7 +636,7 @@ Try clicking the “Register” button without filling out the form and see that
 
 Fill out a username and password and you’ll be redirected to the login page. Try entering an incorrect username, or the correct username and incorrect password. If you log in you’ll get an error because there’s no `index` view to redirect to yet.
 
-### Static Files
+## Static Files
 
 The authentication views and templates work, but they look very plain right now. Some [CSS](https://developer.mozilla.org/docs/Web/CSS) can be added to add style to the HTML layout you constructed. The style won’t change, so it’s a _static_ file rather than a template.
 
@@ -691,13 +689,13 @@ Go to [http://127.0.0.1:5000/auth/login](http://127.0.0.1:5000/auth/login) and
 
 You can read more about CSS from [Mozilla’s documentation](https://developer.mozilla.org/docs/Web/CSS). If you change a static file, refresh the browser page. If the change doesn’t show up, try clearing your browser’s cache.
 
-### Blog Blueprint
+## Blog Blueprint
 
 You’ll use the same techniques you learned about when writing the authentication blueprint to write the blog blueprint. The blog should list all posts, allow logged in users to create posts, and allow the author of a post to edit or delete it.
 
 As you implement each view, keep the development server running. As you save your changes, try going to the URL in your browser and testing them out.
 
-#### The Blueprint
+### The Blueprint
 
 Define the blueprint and register it in the application factory.
 
@@ -736,7 +734,7 @@ However, the endpoint for the `index` view defined below will be `blog.index`
 
 In another application you might give the blog blueprint a `url_prefix` and define a separate `index` view in the application factory, similar to the `hello` view. Then the `index` and `blog.index` endpoints and URLs would be different.
 
-#### Index
+### Index
 
 The index will show all of the posts, most recent first. A `JOIN` is used so that the author information from the `user` table is available in the result.
 
@@ -789,7 +787,7 @@ def index():
 
 When a user is logged in, the `header` block adds a link to the `create` view. When the user is the author of a post, they’ll see an “Edit” link to the `update` view for that post. `loop.last` is a special variable available inside [Jinja for loops](https://jinja.palletsprojects.com/templates/#for). It’s used to display a line after each post except the last one, to visually separate them.
 
-#### Create
+### Create
 
 The `create` view works the same as the auth `register` view. Either the form is displayed, or the posted data is validated and the post is added to the database or an error is shown.
 
@@ -844,7 +842,7 @@ def create():
 {% endblock %}
 ```
 
-#### Update
+### Update
 
 Both the `update` and `delete` views will need to fetch a `post` by `id` and check if the author matches the logged in user. To avoid duplicating code, you can write a function to get the `post` and call it from each view.
 
@@ -935,7 +933,7 @@ This template has two forms. The first posts the edited data to the current page
 
 The pattern `{{ request.form['title'] or post['title'] }}` is used to choose what data appears in the form. When the form hasn’t been submitted, the original `post` data appears, but if invalid form data was posted you want to display that so the user can fix the error, so `request.form` is used instead. [`request`](https://flask.palletsprojects.com/en/3.0.x/api/#flask.request "flask.request") is another variable that’s automatically available in templates.
 
-#### Delete
+### Delete
 
 The delete view doesn’t have its own template, the delete button is part of `update.html` and posts to the `/<id>/delete` URL. Since there is no template, it will only handle the `POST` method and then redirect to the `index` view.
 
@@ -954,7 +952,7 @@ def delete(id):
 
 Congratulations, you’ve now finished writing your application! Take some time to try out everything in the browser. However, there’s still more to do before the project is complete.
 
-### Make the Project Installable
+## Make the Project Installable
 
 Making your project installable means that you can build a _wheel_ file and install that in another environment, just like you installed Flask in your project’s environment. This makes deploying your project the same as installing any other library, so you’re using all the standard Python tools to manage everything.
 
@@ -968,7 +966,7 @@ Installing also comes with other benefits that might not be obvious from the tut
 >
 >This is being introduced late in the tutorial, but in your future projects you should always start with this.
 
-#### Describe the Project
+### Describe the Project
 
 The `pyproject.toml` file describes your project and how to build it.
 
@@ -990,7 +988,7 @@ build-backend = "flit_core.buildapi"
 
 See the official [Packaging tutorial](https://packaging.python.org/tutorials/packaging-projects/) for more explanation of the files and options used.
 
-#### Install the Project
+### Install the Project
 
 Use `pip` to install your project in the virtual environment.
 
@@ -1019,7 +1017,7 @@ Werkzeug       0.14.1
 
 Nothing changes from how you’ve been running your project so far. `--app` is still set to `flaskr` and `flask run` still runs the application, but you can call it from anywhere, not just the `flask-tutorial` directory.
 
-### Test Coverage
+## Test Coverage
 
 Writing unit tests for your application lets you check that the code you wrote works the way you expect. Flask provides a test client that simulates requests to the application and returns the response data.
 
@@ -1037,7 +1035,7 @@ You’ll use [pytest](https://pytest.readthedocs.io/) and [coverage](https://
 $ pip install pytest coverage
 ```
 
-#### Setup and Fixtures
+### Setup and Fixtures
 
 The test code is located in the `tests` directory. This directory is _next to_ the `flaskr` package, not inside it. The `tests/conftest.py` file contains setup functions called _fixtures_ that each test will use. Tests are in Python modules that start with `test_`, and each test function in those modules also starts with `test_`.
 
@@ -1108,7 +1106,7 @@ The `runner` fixture is similar to `client`. [`app.test_cli_runner()`](https
 
 Pytest uses fixtures by matching their function names with the names of arguments in the test functions. For example, the `test_hello` function you’ll write next takes a `client` argument. Pytest matches that with the `client` fixture function, calls it, and passes the returned value to the test function.
 
-#### Factory
+### Factory
 
 There’s not much to test about the factory itself. Most of the code will be executed for each test already, so if something fails the other tests will notice.
 
@@ -1130,7 +1128,7 @@ def test_hello(client):
 
 You added the `hello` route as an example when writing the factory at the beginning of the tutorial. It returns “Hello, World!”, so the test checks that the response data matches.
 
-#### Database
+### Database
 
 Within an application context, `get_db` should return the same connection each time it’s called. After the context, the connection should be closed.
 
@@ -1173,7 +1171,7 @@ def test_init_db_command(runner, monkeypatch):
 
 This test uses Pytest’s `monkeypatch` fixture to replace the `init_db` function with one that records that it’s been called. The `runner` fixture you wrote above is used to call the `init-db` command by name.
 
-#### Authentication
+### Authentication
 
 For most of the views, a user needs to be logged in. The easiest way to do this in tests is to make a `POST` request to the `login` view with the client. Rather than writing that out every time, you can write a class with methods to do that, and use a fixture to pass it the client for each test.
 
@@ -1281,7 +1279,7 @@ def test_logout(client, auth):
         auth.logout()
         assert 'user_id' not in session
 ```
-#### Blog
+### Blog
 
 All the blog views use the `auth` fixture you wrote earlier. Call `auth.login()` and subsequent requests from the client will be logged in as the `test` user.
 
@@ -1397,7 +1395,7 @@ def test_delete(client, auth, app):
         assert post is None
 ```
 
-#### Running the Tests
+### Running the Tests
 
 Some extra configuration, which is not required but makes running tests with coverage less verbose, can be added to the project’s `pyproject.toml` file.
 
@@ -1461,11 +1459,11 @@ $ coverage html
 
 This generates files in the `htmlcov` directory. Open `htmlcov/index.html` in your browser to see the report.
 
-### Deploy to Production
+## Deploy to Production
 
 This part of the tutorial assumes you have a server that you want to deploy your application to. It gives an overview of how to create the distribution file and install it, but won’t go into specifics about what server or software to use. You can set up a new environment on your development computer to try out the instructions below, but probably shouldn’t use it for hosting a real public application. See [Deploying to Production](https://flask.palletsprojects.com/en/3.0.x/deploying/) for a list of many different ways to host your application.
 
-#### Build and Install
+### Build and Install
 
 When you want to deploy your application elsewhere, you build a _wheel_ (`.whl`) file. Install and use the `build` tool to do this.
 
@@ -1491,7 +1489,7 @@ $ flask --app flaskr init-db
 
 When Flask detects that it’s installed (not in editable mode), it uses a different directory for the instance folder. You can find it at `.venv/var/flaskr-instance` instead.
 
-#### Configure the Secret Key
+### Configure the Secret Key
 
 In the beginning of the tutorial that you gave a default value for [`SECRET_KEY`](https://flask.palletsprojects.com/en/3.0.x/config/#SECRET_KEY "SECRET_KEY"). This should be changed to some random bytes in production. Otherwise, attackers could use the public `'dev'` key to modify the session cookie, or anything else that uses the secret key.
 
@@ -1513,7 +1511,7 @@ SECRET_KEY = '192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
 
 You can also set any other necessary configuration here, although `SECRET_KEY` is the only one needed for Flaskr.
 
-#### Run with a Production Server
+### Run with a Production Server
 
 When running publicly rather than in development, you should not use the built-in development server (`flask run`). The development server is provided by Werkzeug for convenience, but is not designed to be particularly efficient, stable, or secure.
 
@@ -1533,7 +1531,7 @@ Serving on http://0.0.0.0:8080
 
 See [Deploying to Production](https://flask.palletsprojects.com/en/3.0.x/deploying/) for a list of many different ways to host your application. Waitress is just an example, chosen for the tutorial because it supports both Windows and Linux. There are many more WSGI servers and deployment options that you may choose for your project.
 
-### Keep Developing!
+## Keep Developing!
 
 You’ve learned about quite a few Flask and Python concepts throughout the tutorial. Go back and review the tutorial and compare your code with the steps you took to get there. Compare your project to the [example project](https://github.com/pallets/flask/tree/3.0.3/examples/tutorial), which might look a bit different due to the step-by-step nature of the tutorial.
 
