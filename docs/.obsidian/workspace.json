@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How_to_code/How_to_Python.md",
+                "file": "Think/How_to_code/How_to_Docker.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How_to_code/How_to_Python.md",
+                "file": "Think/How_to_code/How_to_Docker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How_to_code/How_to_Python.md",
+                "file": "Think/How_to_code/How_to_Docker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How_to_code/How_to_Python.md"
+                "file": "Think/How_to_code/How_to_Docker.md"
               }
             }
           },
@@ -142,11 +142,12 @@
   },
   "active": "c62b3a5f94b64285",
   "lastOpenFiles": [
+    "Think/How_to_code/How_to_Python.md",
+    "Think/How_to_code/How_to_Docker.md",
     "Think/How_to_code/Cheatsheet.md",
     "Think/How_to_be_valuable/How_to_be_valuable.md",
     "Think/How_to_code/How_to_TypeScript.md",
     "Think/How_to_code/How_to_React_TypeScript.md",
-    "Think/How_to_code/How_to_Python.md",
     "Think/How_to_code/How_to_React_Native.md",
     "Question/Learning/What's something you understand today that you wouldn't have understood a year ago.md",
     "Question/Learning/What's something you used to do a lot but don't any more.md",
@@ -182,7 +183,6 @@
     "🛠/Swimlane Process-SP.png",
     "🛠/Swimlane Process-PP.png",
     "🛠/Strategy Map-B.png",
-    "index.md",
     "Think/How_to_read/How to read.svg.xml",
     "Think/How to read/How to write.svg.xml",
     "Think/How to read/Diagram.svg.xml",
