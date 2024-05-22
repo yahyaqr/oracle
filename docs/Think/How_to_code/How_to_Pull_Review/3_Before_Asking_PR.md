@@ -47,7 +47,7 @@ Code-generated files, such as JSON models or unit test mocks, don’t need to be
 
 ## 6. Static code analysis
 
-It’s a good practice to have static code analysis enabled. The [Dart docs](https://dart.dev/guides/language/analysis-options) describe its perks very concisely:
+It’s a good practice to have static code analysis enabled.
 
 > Static analysis allows you to find problems before executing a single line of code. It’s a powerful tool used to prevent bugs and ensure that code conforms to style guidelines.
 
@@ -89,10 +89,6 @@ Using markers such as milestones and labels is more of a nice-to-have tip, and d
 The next time we open a pull request, it will already be prefilled for us:
 
 ![Screenshot 2022-02-13 at 23.21.45.png#center](https://blog.codemagic.io/uploads/2022/04/Screenshot_2022-02-13_at_23.21.45.png#center)
-
-And the result looks like this: [https://github.com/darjaorlova/codemagic_pr_todo/pull/3](https://github.com/darjaorlova/codemagic_pr_todo/pull/3)
-
-![Screenshot 2022-02-13 at 23.26.12.png#center](https://blog.codemagic.io/uploads/2022/04/Screenshot_2022-02-13_at_23.26.12.png#center)
 
 ## **Bonus tip**
 

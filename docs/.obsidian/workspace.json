@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How_to_code/How_to_Pull_Review/5_How_To.md",
+                "file": "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How_to_code/How_to_Pull_Review/5_How_To.md",
+                "file": "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How_to_code/How_to_Pull_Review/5_How_To.md",
+                "file": "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How_to_code/How_to_Pull_Review/5_How_To.md"
+                "file": "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md"
               }
             }
           },
@@ -142,11 +142,18 @@
   },
   "active": "c62b3a5f94b64285",
   "lastOpenFiles": [
-    "Think/How_to_code/How_to_Pull_Review/4_After_Getting_Review.md",
+    "Think/How_to_code/How_to_Git_Branch/2_Basic_Branching_and_Merging.md",
+    "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md",
+    "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
+    "Think/How_to_code/How_to_Git_Branch/Branching_Workflows.md",
+    "Think/How_to_code/How_to_Git_Branch/Distributed_Workflows.md",
     "Think/How_to_code/How_to_Pull_Review/5_How_To.md",
-    "Think/How_to_code/How_to_Pull_Review/3_During_Asking_PR.md",
-    "Think/How_to_code/How_to_Pull_Review/2_During_Coding_Tips.md",
-    "Think/How_to_code/How_to_Pull_Review/1_Three_Approaches.md",
+    "Think/How_to_code/How_to_Git_Branch",
+    "Think/How_to_code/How_to_Pull_Review/4_Addressing_Review.md",
+    "Think/How_to_code/How_to_Pull_Review/3_Before_Asking_PR.md",
+    "Think/How_to_code/How_to_Pull_Review/2_During_Coding.md",
+    "Think/How_to_code/How_to_Pull_Review/1_Code_Review_Approaches.md",
+    "Think/How_to_code/How_to_Pull_Review/6_Useful_Tips.md",
     "Think/How_to_code/How_to_Pull_Review/Good Pull Request Practices.md",
     "Think/How_to_code/How_to_Pull_Review",
     "Think/How_to_code/How_to_Flask/Tutorial.md",
@@ -164,12 +171,6 @@
     "Question/Learning/What's something you used to do a lot but don't any more.md",
     "Question/Learning/What's something you'd love to receive as a gift but no one ever thinks of.md",
     "Think/How_to_code/How_to_React.md",
-    "Question/Behavioral/Lose_Temper.md",
-    "Question/Behavioral/Rude.md",
-    "Question/Behavioral/Danger_Sign.md",
-    "Question/Behavioral/What parts of your personality or behavior cause friction in your relationship.md",
-    "Question/Behavioral/Share one way you would like to do a better job of managing difficult emotions or insecurities.md",
-    "Question/Behavioral/What's something you've been meaning to try to but just haven't gotten around to yet.md",
     "Pasted image 20240511160800.png",
     "Pasted image 20240512000612.png",
     "Think/The Done Manifesto.canvas",
@@ -189,7 +190,6 @@
     "Think/How to read/How to write.svg.xml",
     "Think/How to read/Diagram.svg.xml",
     "Think/How_to_write/How to write.canvas",
-    "🛠",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Untitled 2.canvas"
