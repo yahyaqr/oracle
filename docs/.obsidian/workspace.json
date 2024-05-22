@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
+                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
+                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
+                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md"
+                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md"
               }
             }
           },
@@ -127,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -142,6 +142,9 @@
   },
   "active": "c62b3a5f94b64285",
   "lastOpenFiles": [
+    "Think/How_to_code/How_to_Git_Branch/Cheatsheet_2.md",
+    "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
+    "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
     "Think/How_to_code/How_to_Git_Branch/2_Basic_Branching_and_Merging.md",
     "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md",
     "Think/How_to_code/How_to_Git_Branch/4_Branching_Workflows.md",
@@ -151,7 +154,6 @@
     "Think/How_to_code/How_to_Git_Branch/8_Stashing_and_Cleaning.md",
     "Think/How_to_code/How_to_Docker.md",
     "Think/How_to_code/How_to_Git_Branch/4_.md",
-    "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
     "Think/How_to_code/How_to_Pull_Review/5_How_To.md",
     "Think/How_to_code/How_to_Git_Branch",
     "Think/How_to_code/How_to_Pull_Review/4_Addressing_Review.md",
@@ -169,8 +171,6 @@
     "Think/How_to_code/Cheatsheet.md",
     "Think/How_to_be_valuable/How_to_be_valuable.md",
     "Think/How_to_code/How_to_TypeScript.md",
-    "Think/How_to_code/How_to_React_TypeScript.md",
-    "Think/How_to_code/How_to_React_Native.md",
     "Pasted image 20240511160800.png",
     "Pasted image 20240512000612.png",
     "Think/The Done Manifesto.canvas",
