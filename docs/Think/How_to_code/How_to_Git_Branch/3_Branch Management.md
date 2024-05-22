@@ -45,15 +45,13 @@ If you are sure you want to delete it, run 'git branch -D testing'.
 
 If you really do want to delete the branch and lose that work, you can force it with `-D`, as the helpful message points out.
 
-|   |   |
-|---|---|
-|Tip|The options described above, `--merged` and `--no-merged` will, if not given a commit or branch name as an argument, show you what is, respectively, merged or not merged into your _current_ branch.<br><br>You can always provide an additional argument to ask about the merge state with respect to some other branch without checking that other branch out first, as in, what is not merged into the `master` branch?<br><br>```console<br>$ git checkout testing<br>$ git branch --no-merged master<br>  topicA<br>  featureB<br>```|
+| Tip | The options described above, `--merged` and `--no-merged` will, if not given a commit or branch name as an argument, show you what is, respectively, merged or not merged into your _current_ branch.<br><br>You can always provide an additional argument to ask about the merge state with respect to some other branch without checking that other branch out first, as in, what is not merged into the `master` branch?<br><br>```console<br>$ git checkout testing<br>$ git branch --no-merged master<br>  topicA<br>  featureB<br>``` |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### Changing a branch name
 
-|   |   |
-|---|---|
-|Caution|Do not rename branches that are still in use by other collaborators. Do not rename a branch like master/main/mainline without having read the section [Changing the master branch name](https://git-scm.com/book/en/v2/ch00/_changing_master).|
+| Caution | Do not rename branches that are still in use by other collaborators. Do not rename a branch like master/main/mainline without having read the section [Changing the master branch name](https://git-scm.com/book/en/v2/ch00/_changing_master). |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 Suppose you have a branch that is called `bad-branch-name` and you want to change it to `corrected-branch-name`, while keeping all history. You also want to change the branch name on the remote (GitHub, GitLab, other server). How do you do this?
 
@@ -90,9 +88,8 @@ Now the bad branch name is fully replaced with the corrected branch name.
 
 #### Changing the master branch name
 
-|   |   |
-|---|---|
-|Warning|Changing the name of a branch like master/main/mainline/default will break the integrations, services, helper utilities and build/release scripts that your repository uses. Before you do this, make sure you consult with your collaborators. Also, make sure you do a thorough search through your repo and update any references to the old branch name in your code and scripts.|
+| Warning | Changing the name of a branch like master/main/mainline/default will break the integrations, services, helper utilities and build/release scripts that your repository uses. Before you do this, make sure you consult with your collaborators. Also, make sure you do a thorough search through your repo and update any references to the old branch name in your code and scripts. |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 Rename your local `master` branch into `main` with the following command:
 
@@ -123,17 +120,11 @@ Your local `master` branch is gone, as it’s replaced with the `main` branc
 Now you have a few more tasks in front of you to complete the transition:
 
 - Any projects that depend on this one will need to update their code and/or configuration.
-    
 - Update any test-runner configuration files.
-    
 - Adjust build and release scripts.
-    
 - Redirect settings on your repo host for things like the repo’s default branch, merge rules, and other things that match branch names.
-    
 - Update references to the old branch in documentation.
-    
 - Close or merge any pull requests that target the old branch.
-    
 
 After you’ve done all these tasks, and are certain the `main` branch performs just as the `master` branch, you can delete the `master` branch:
 
