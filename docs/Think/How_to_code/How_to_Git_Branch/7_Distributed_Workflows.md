@@ -56,8 +56,9 @@ This kind of workflow isn’t common, but can be useful in very big projects, or
 
 ### Patterns for Managing Source Code Branches
 
-| Note | Martin Fowler has made a guide "Patterns for Managing Source Code Branches". This guide covers all the common Git workflows, and explains how/when to use them. There’s also a section comparing high and low integration frequencies.<br><br>[https://martinfowler.com/articles/branching-patterns.html](https://martinfowler.com/articles/branching-patterns.html) |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Note                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Martin Fowler has made a guide "Patterns for Managing Source Code Branches". This guide covers all the common Git workflows, and explains how/when to use them. There’s also a section comparing high and low integration frequencies.<br><br>[https://martinfowler.com/articles/branching-patterns.html](https://martinfowler.com/articles/branching-patterns.html) |
 
 ### Workflows Summary
 

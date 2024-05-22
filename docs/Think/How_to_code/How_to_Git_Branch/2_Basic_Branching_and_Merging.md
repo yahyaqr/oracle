@@ -217,8 +217,9 @@ Hit return to start merge resolution tool (opendiff):
 
 If you want to use a merge tool other than the default (Git chose `opendiff` in this case because the command was run on macOS), you can see all the supported tools listed at the top after “one of the following tools.” Just type the name of the tool you’d rather use.
 
-| Note | If you need more advanced tools for resolving tricky merge conflicts, we cover more on merging in [Advanced Merging](https://git-scm.com/book/en/v2/ch00/_advanced_merging). |
-| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Note                                                                                                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| If you need more advanced tools for resolving tricky merge conflicts, we cover more on merging in [Advanced Merging](https://git-scm.com/book/en/v2/ch00/_advanced_merging). |
 
 After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run `git status` again to verify that all conflicts have been resolved:
 
