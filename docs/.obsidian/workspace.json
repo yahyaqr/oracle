@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
+                "file": "Code/How_to_Next.js/Docs/3.2_Routing_Misc.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
+                "file": "Code/How_to_Next.js/Docs/3.2_Routing_Misc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
+                "file": "Code/How_to_Next.js/Docs/3.2_Routing_Misc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md"
+                "file": "Code/How_to_Next.js/Docs/3.2_Routing_Misc.md"
               }
             }
           },
@@ -127,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -142,53 +142,53 @@
   },
   "active": "c62b3a5f94b64285",
   "lastOpenFiles": [
-    "Think/How_to_code/How_to_Git_Branch/Cheatsheet_2.md",
-    "Think/How_to_code/How_to_Git_Branch/Cheatsheet.md",
-    "Think/How_to_code/How_to_Git_Branch/1_Branches_in_a_Nutshell.md",
-    "Think/How_to_code/How_to_Git_Branch/2_Basic_Branching_and_Merging.md",
-    "Think/How_to_code/How_to_Git_Branch/3_Branch Management.md",
-    "Think/How_to_code/How_to_Git_Branch/4_Branching_Workflows.md",
-    "Think/How_to_code/How_to_Git_Branch/5_Remote_Branches.md",
-    "Think/How_to_code/How_to_Git_Branch/6_Rebasing.md",
-    "Think/How_to_code/How_to_Git_Branch/7_Distributed_Workflows.md",
-    "Think/How_to_code/How_to_Git_Branch/8_Stashing_and_Cleaning.md",
-    "Think/How_to_code/How_to_Docker.md",
-    "Think/How_to_code/How_to_Git_Branch/4_.md",
-    "Think/How_to_code/How_to_Pull_Review/5_How_To.md",
-    "Think/How_to_code/How_to_Git_Branch",
-    "Think/How_to_code/How_to_Pull_Review/4_Addressing_Review.md",
-    "Think/How_to_code/How_to_Pull_Review/3_Before_Asking_PR.md",
-    "Think/How_to_code/How_to_Pull_Review/2_During_Coding.md",
-    "Think/How_to_code/How_to_Pull_Review/1_Code_Review_Approaches.md",
-    "Think/How_to_code/How_to_Pull_Review/6_Useful_Tips.md",
-    "Think/How_to_code/How_to_Pull_Review/Good Pull Request Practices.md",
-    "Think/How_to_code/How_to_Pull_Review",
-    "Think/How_to_code/How_to_Flask/Tutorial.md",
-    "Think/How_to_code/How_to_Python.md",
-    "Think/How_to_code/How_to_Flask/Installation.md",
-    "Think/How_to_code/How_to_Flask/Quickstart.md",
-    "Think/How_to_code/How_to_Flask",
-    "Think/How_to_code/Cheatsheet.md",
-    "Think/How_to_be_valuable/How_to_be_valuable.md",
-    "Think/How_to_code/How_to_TypeScript.md",
-    "Pasted image 20240511160800.png",
+    "Code/How_to_Next.js/Docs/4_Components_and_Layouts.md",
+    "Code/How_to_Next.js/Docs/5_Data_Fetching.md",
+    "Code/How_to_Next.js/Docs/3_Pages_and_Routing.md",
+    "Code/How_to_Next.js/Docs/3.1_Route_Handlers.md",
+    "Code/How_to_Next.js/Docs/3.2_Routing_Misc.md",
+    "Code/How_to_Next.js/Docs/7_Internationalization.md",
+    "Code/How_to_Next.js/Docs/2.1_Project_Organization.md",
+    "Code/How_to_Next.js/Docs/2_Project_Structure.md",
+    "Code/How_to_Next.js/Docs/8_Middleware.md",
+    "Code/How_to_Next.js/Docs/6_API_Routes.md",
+    "Code/How_to_Next.js/Docs/1_Installation.md",
+    "Code/How_to_Next.js/Cheatsheet/5_Add_Styling.md",
+    "Code/How_to_Next.js/Cheatsheet/4_Add_ESLint_and_Prettier.md",
+    "Code/How_to_Next.js/Cheatsheet/3_Add_TypeScript.md",
+    "Code/How_to_Next.js/Cheatsheet/1_Setup.md",
+    "Code/How_to_Next.js/Docs",
+    "Pasted image 20240523093449.png",
     "Pasted image 20240512000612.png",
+    "Pasted image 20240511160800.png",
+    "docs/app/api-reference/functions/redirect.md",
+    "docs/app/api-reference/functions",
+    "docs/app/api-reference",
+    "docs/app",
+    "docs",
+    "Code/Basic Cheatsheet.md",
+    "Code/How_to_TypeScript.md",
     "Think/The Done Manifesto.canvas",
+    "Code",
+    "docs/app/building-your-application/routing.md",
+    "docs/app/building-your-application",
+    "Think/How_to_code/How_to_Next.js/3_Routes",
+    "Code/How_to_Next.js/Cheatsheet/2_Deployment.md",
+    "Code/How_to_Next.js/Cheatsheet/6_Add_SEO.md",
+    "Code/How_to_Next.js/Cheatsheet/7_Add_Analytics.md",
+    "Code/How_to_Next.js/Cheatsheet/8_Miscellanous_Tips.md",
+    "Think/How_to_code/How_to_Next.js/Cheatsheet/Cheatsheet.md",
+    "Code/How_to_Next.js/Cheatsheet",
+    "Code/How_to_Next.js",
+    "Code/How_to_PR_Review/5_How_To.md",
+    "Code/How_to_Git_Branch/Cheatsheet.md",
     "🛠/Canvas-EM.png",
-    "Think/How to code/TypeScript",
-    "Think/How to code/React",
-    "Think/How_to_code",
-    "Think/How_to_be_valuable",
     "🛠/Mindmap-FBA.png",
     "🛠/Venn Diagram-THC.png",
     "🛠/Venn Diagram-IP.png",
     "🛠/Venn Diagram-FT.png",
     "🛠/Swimlane Process-SP.png",
     "🛠/Swimlane Process-PP.png",
-    "🛠/Strategy Map-B.png",
-    "Think/How_to_read/How to read.svg.xml",
-    "Think/How to read/How to write.svg.xml",
-    "Think/How to read/Diagram.svg.xml",
     "Think/How_to_write/How to write.canvas",
     "Untitled 1.canvas",
     "Untitled.canvas",
