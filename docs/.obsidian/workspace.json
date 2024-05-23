@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Code/How_to_Next.js/Docs/5_Data_Fetching.md",
+                "file": "Code/How_to_Next.js/How_to_Next.js.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Code/How_to_Next.js/Docs/5_Data_Fetching.md",
+                "file": "Code/How_to_Next.js/How_to_Next.js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Code/How_to_Next.js/Docs/5_Data_Fetching.md",
+                "file": "Code/How_to_Next.js/How_to_Next.js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Code/How_to_Next.js/Docs/5_Data_Fetching.md"
+                "file": "Code/How_to_Next.js/How_to_Next.js.md"
               }
             }
           },
@@ -142,13 +142,14 @@
   },
   "active": "c62b3a5f94b64285",
   "lastOpenFiles": [
+    "Code/How_to_Next.js/Docs/8_Middleware.md",
+    "Code/How_to_Next.js/How_to_Next.js.md",
+    "Code/How_to_Next.js/Docs/7_Internationalization.md",
+    "Code/How_to_Next.js/Docs/5_Data_Fetching.md",
     "Code/How_to_Next.js/Docs/4_Components_and_Layouts.md",
     "Code/How_to_Next.js/Docs/3.2_Routing_Misc.md",
-    "Code/How_to_Next.js/Docs/5_Data_Fetching.md",
-    "Code/How_to_Next.js/Docs/8_Middleware.md",
-    "Code/How_to_Next.js/Docs/7_Internationalization.md",
-    "Code/How_to_Next.js/Docs/3_Pages_and_Routing.md",
     "Code/How_to_Next.js/Docs/3.1_Route_Handlers.md",
+    "Code/How_to_Next.js/Docs/3_Pages_and_Routing.md",
     "Code/How_to_Next.js/Docs/2.1_Project_Organization.md",
     "Code/How_to_Next.js/Docs/2_Project_Structure.md",
     "Code/How_to_Next.js/Docs/6_API_Routes.md",
@@ -181,7 +182,6 @@
     "Code/How_to_Next.js/Cheatsheet",
     "Code/How_to_Next.js",
     "Code/How_to_PR_Review/5_How_To.md",
-    "Code/How_to_Git_Branch/Cheatsheet.md",
     "🛠/Canvas-EM.png",
     "🛠/Mindmap-FBA.png",
     "🛠/Venn Diagram-THC.png",
