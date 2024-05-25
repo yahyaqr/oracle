@@ -1,0 +1,4895 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My personal digital garden">
+      
+      
+        <meta name="author" content="Yahyaqr">
+      
+      
+        <link rel="canonical" href="https://yahyaqr.github.io/oracle/Code/How_to_Next.js/How_to_Next.js/">
+      
+      
+        <link rel="prev" href="../../How_to_GraphQL/Tutorial/Part_4_Codegen_and_Deployment/">
+      
+      
+        <link rel="next" href="../Cheatsheet/1_Setup/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>How to Next.js - Yahya's Oracle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.274 9.537v-.001l-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074ZM4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75Z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.484 4.484 0 0 1-.563-1.191 3.835 3.835 0 0 1-.05-2.063 4.647 4.647 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .748.748 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.425 2.425 0 0 1-.507-.441 3.075 3.075 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.884.884 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.737 3.737 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75Z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.756 2.756 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6.24 6.24 0 0 0-.26.16.952.952 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661.103-.067.207-.132.313-.195l.007-.004c.1-.061.182-.11.258-.161a.969.969 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.612.612 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1.01 1.01 0 0 0-.34.398ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.488 3.488 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.036 5.036 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.677 1.677 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06Zm.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.172.172 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173Z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nextjs-core-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Yahya&#39;s Oracle" class="md-header__button md-logo" aria-label="Yahya's Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Yahya's Oracle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to Next.js
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Book/Ego_is_The_Enemy/" class="md-tabs__link">
+          
+  
+  Book
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Basic%20Cheatsheet/" class="md-tabs__link">
+          
+  
+  Code
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Question/Behavioral/Danger_Sign/" class="md-tabs__link">
+          
+  
+  Question
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Think/How_to_be_valuable/How_to_be_valuable/" class="md-tabs__link">
+          
+  
+  Think
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%F0%9F%9B%A0/How-to/" class="md-tabs__link">
+          
+  
+  🛠
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Yahya&#39;s Oracle" class="md-nav__button md-logo" aria-label="Yahya's Oracle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Yahya's Oracle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Book
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Book
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Book/Ego_is_The_Enemy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ego is The Enemy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Book/The_Compound_Effect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Compound Effect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic%20Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Git Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_React/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to React
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_React_Native/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to React Native
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_React_TypeScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to React TypeScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_TypeScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to TypeScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to Flask
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            How to Flask
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Flask/Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Flask/Quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Flask/Tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to Git Branch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            How to Git Branch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/1_Branches_in_a_Nutshell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Branches in a Nutshell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/2_Basic_Branching_and_Merging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Basic Branching and Merging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/3_Branch%20Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Branch Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/4_Branching_Workflows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Branching Workflows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/5_Remote_Branches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Remote Branches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/6_Rebasing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 Rebasing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/7_Distributed_Workflows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 Distributed Workflows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/8_Stashing_and_Cleaning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 Stashing and Cleaning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Git_Branch/Cheatsheet_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to GraphQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            How to GraphQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/1_GraphQL_vs_REST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 GraphQL vs REST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/2_Core_Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Core Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/3_More_GraphQL_Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 More GraphQL Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/4_Tooling_and_Ecosystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Tooling and Ecosystem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11_5" id="__nav_3_11_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_11_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/Tutorial/Part_0_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part 0 Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/Tutorial/Part_1_Frontend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part 1 Frontend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/Tutorial/Part_2_API_Prep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part 2 API Prep
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/Tutorial/Part_3_GraphQL_API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part 3 GraphQL API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_GraphQL/Tutorial/Part_4_Codegen_and_Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part 4 Codegen and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to Next.js
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            How to Next.js
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to Next.js
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    How to Next.js
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-rendering-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Rendering Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-side-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-side Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-side-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client-side Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-next-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      create-next-app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-app-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js App Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSS Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-hydration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Hydration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Routing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-app-router_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js App Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-folders-and-reserved-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Folders and Reserved Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-nested-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Nested Routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composition-of-url-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition of URL Paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-pagetsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js page.tsx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-layouttsx-and-templatetsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js layout.tsx and template.tsx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-dynamic-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Dynamic Segments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-catch-all-dynamic-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Catch-all Dynamic Segment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-reserved-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Reserved Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-reserved-file-component-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Reserved File Component Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Server Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Server Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hybrid Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-of-server-within-client-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration of Server within Client Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-server-components_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rendering Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rendering Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-in-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming in Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-components-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Components Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspense-with-fallback-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suspense with Fallback Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-of-server-and-client-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles of Server and Client Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Data Fetching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Data Fetching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-side-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-Side Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#route-handlers-in-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Handlers in Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-calls-in-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch Calls in Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-only-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      'server-only' Package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-control-in-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Control in Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential-data-fetching-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequential Data Fetching Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-data-fetching-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Data Fetching Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-parallel-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Parallel Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cached-data-revalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cached Data Revalidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-based-revalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-based Revalidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-action-in-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Action in Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-demand-revalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-Demand Revalidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-uis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading UIs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-using-suspense-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming using &lt;Suspense&gt; boundaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-only-forms-with-server-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-Only Forms With Server Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#largest-contentful-paint-lcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Largest Contentful Paint (LCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-input-delay-fid" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Input Delay (FID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cumulative-layout-shift-cls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cumulative Layout Shift (CLS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-script-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Script Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-font-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Font Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-image-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Image Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-optimization-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Optimization Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-metadata-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Metadata Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-config-based-metadata-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Config-Based Metadata Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-file-based-metadata-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js File-Based Metadata Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lighthouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lighthouse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12_2" id="__nav_3_12_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cheatsheet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/1_Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/2_Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/3_Add_TypeScript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Add TypeScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/4_Add_ESLint_and_Prettier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Add ESLint and Prettier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/5_Add_Styling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Add Styling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/6_Add_SEO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 Add SEO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/7_Add_Analytics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 Add Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cheatsheet/8_Miscellanous_Tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 Miscellanous Tips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12_3" id="__nav_3_12_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/1_Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/2.1_Project_Organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Project Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/2_Project_Structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/3.1_Route_Handlers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Route Handlers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/3.2_Routing_Misc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Routing Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/3_Pages_and_Routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Pages and Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/4_Components_and_Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Components and Layouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/5_Data_Fetching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Data Fetching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/7_Internationalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 Internationalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/8_Middleware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 Middleware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to PR Review
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            How to PR Review
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/0_Useful_Tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0 Useful Tips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/1_Code_Review_Approaches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Code Review Approaches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/2_During_Coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 During Coding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/3_Before_Asking_PR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Before Asking PR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/4_Addressing_Review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Addressing Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/5_How_To_PR_Review_on_GitHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 How To PR Review on GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_PR_Review/6_How_To_PR_Review_on_VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 How To PR Review on VSCode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Question
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Question
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Behavioral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Behavioral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Behavioral/Danger_Sign/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What are your own danger signs during a disagreement?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Behavioral/Lose_Temper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    When do you most easily lose your temper in conversations or situations?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Behavioral/Rude/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How do you normally respond when other people are rude or mean to you?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Behavioral/Share%20one%20way%20you%20would%20like%20to%20do%20a%20better%20job%20of%20managing%20difficult%20emotions%20or%20insecurities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Share one way you would like to do a better job of managing difficult emotions or insecurities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Behavioral/What%20parts%20of%20your%20personality%20or%20behavior%20cause%20friction%20in%20your%20relationship/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What parts of your personality or behavior cause friction in your relationship
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Behavioral/What%27s%20something%20you%27ve%20been%20meaning%20to%20try%20to%20but%20just%20haven%27t%20gotten%20around%20to%20yet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What's something you've been meaning to try to but just haven't gotten around to yet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/Do%20you%20have%20any%20fears%20that%20you%20would%20consider%20irrational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Do you have any fears that you would consider irrational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/Do%20you%20prefer%20to%20plan%20things%20out%20or%20let%20things%20happen%20as%20they%20happen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Do you prefer to plan things out or let things happen as they happen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/Does%20making%20friends%20with%20strangers%20come%20naturally%20to%20you/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Does making friends with strangers come naturally to you
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/Have%20you%20ever%20won%20or%20been%20chosen%20for%20something%20despite%20thinking%20you%20had%20no%20chance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Have you ever won or been chosen for something despite thinking you had no chance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/Share%20a%20memory%20that%20many%20people%20don%27t%20know%20about%20that%20always%20bring%20you%20joy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Share a memory that many people don't know about that always bring you joy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/Share%20a%20way%20that%20you%27ve%20grown%20recently/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Share a way that you've grown recently
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/What%20do%20you%20do%20when%20you%20need%20to%20feel%20motivated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What do you do when you need to feel motivated
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/What%27s%20something%20that%20people%20are%20usually%20surprised%20to%20learn%20about%20you/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What's something that people are usually surprised to learn about you
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/What%27s%20something%20you%20understand%20today%20that%20you%20wouldn%27t%20have%20understood%20a%20year%20ago/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What's something you understand today that you wouldn't have understood a year ago
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/What%27s%20something%20you%20used%20to%20do%20a%20lot%20but%20don%27t%20any%20more/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What's something you used to do a lot but don't any more
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Question/Learning/What%27s%20something%20you%27d%20love%20to%20receive%20as%20a%20gift%20but%20no%20one%20ever%20thinks%20of/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What's something you'd love to receive as a gift but no one ever thinks of
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Think
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Think
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to be valuable
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            How to be valuable
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Think/How_to_be_valuable/How_to_be_valuable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to be valuable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to read
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            How to read
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Think/How_to_read/Flowchart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flowchart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to write
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            How to write
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Think/How_to_write/Flowchart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flowchart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    🛠
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            🛠
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%9B%A0/How-to/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%9B%A0/Todo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Todo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%9B%A0/Type%20of%20Data%20Visualizations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type of Data Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%9B%A0/Type%20of%20Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type of Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-rendering-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Rendering Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-side-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-side Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-side-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client-side Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-next-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      create-next-app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-app-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js App Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSS Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-hydration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Hydration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Routing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-app-router_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js App Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-folders-and-reserved-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Folders and Reserved Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-nested-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Nested Routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composition-of-url-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition of URL Paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-pagetsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js page.tsx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-layouttsx-and-templatetsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js layout.tsx and template.tsx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-dynamic-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Dynamic Segments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-catch-all-dynamic-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Catch-all Dynamic Segment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-reserved-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Reserved Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-reserved-file-component-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Reserved File Component Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Server Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Server Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hybrid Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-of-server-within-client-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration of Server within Client Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-server-components_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rendering Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rendering Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-in-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming in Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-components-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Components Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspense-with-fallback-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suspense with Fallback Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-of-server-and-client-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles of Server and Client Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Data Fetching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Data Fetching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-side-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-Side Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#route-handlers-in-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Handlers in Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-calls-in-server-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch Calls in Server Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-only-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      'server-only' Package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-control-in-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Control in Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential-data-fetching-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequential Data Fetching Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-data-fetching-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Data Fetching Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-parallel-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Parallel Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cached-data-revalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cached Data Revalidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-based-revalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-based Revalidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-action-in-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Action in Next.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-demand-revalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-Demand Revalidation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-uis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading UIs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-using-suspense-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming using &lt;Suspense&gt; boundaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-only-forms-with-server-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-Only Forms With Server Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next.js Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#largest-contentful-paint-lcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Largest Contentful Paint (LCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-input-delay-fid" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Input Delay (FID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cumulative-layout-shift-cls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cumulative Layout Shift (CLS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-script-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Script Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-font-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Font Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-image-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Image Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-optimization-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Optimization Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-metadata-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Metadata Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-config-based-metadata-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js Config-Based Metadata Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-file-based-metadata-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next.js File-Based Metadata Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lighthouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lighthouse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>How to Next.js</h1>
+
+<h2 id="nextjs-core-concepts">Next.js Core Concepts<a class="headerlink" href="#nextjs-core-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="nextjs">Next.js<a class="headerlink" href="#nextjs" title="Permanent link">&para;</a></h3>
+<p>Next.js is a React framework that supports the development of robust web applications. It provides key features such as routing, rendering, data fetching, server components, and optimization. These features enable high-performing, scalable, and search-engine-friendly web applications.</p>
+<h3 id="nextjs-rendering">Next.js Rendering<a class="headerlink" href="#nextjs-rendering" title="Permanent link">&para;</a></h3>
+<p>Rendering is the process of converting code into viewable user interfaces. In Next.js, different rendering strategies can be adopted depending on the application’s requirements.</p>
+<h3 id="nextjs-rendering-strategies">Next.js Rendering Strategies<a class="headerlink" href="#nextjs-rendering-strategies" title="Permanent link">&para;</a></h3>
+<p>Next.js enables developers to employ various rendering strategies, allowing the creation of hybrid web applications. These strategies allow developers to decide the rendering environment for individual components. The primary environments supported by Next.js are server-side and client-side rendering.</p>
+<h3 id="server-side-rendering">Server-side Rendering<a class="headerlink" href="#server-side-rendering" title="Permanent link">&para;</a></h3>
+<p>In server-side rendering, the server infrastructure is used to render the webpage content. Then, a viewable, non-interactive webpage is sent to the client.</p>
+<p>In Next.js, components are server-side rendered by default using server components. No additional configuration is necessary.</p>
+<h3 id="client-side-rendering">Client-side Rendering<a class="headerlink" href="#client-side-rendering" title="Permanent link">&para;</a></h3>
+<p>In client-side rendering, the server sends the client all the necessary files for a webpage. The client uses the instructions to render the components on the browser and enable interactivity.</p>
+<p>In Next.js, a component can be marked for client-side rendering with the <code>'use client'</code> directive.</p>
+<div class="highlight"><pre><span></span><code>&#39;use client&#39;
+
+function MyComponent() { 
+    return &lt;div&gt;Hello, World!&lt;/div&gt;; 
+}
+</code></pre></div>
+<h3 id="create-next-app"><code>create-next-app</code><a class="headerlink" href="#create-next-app" title="Permanent link">&para;</a></h3>
+<p>A Next.js project can be created with the CLI tool <code>create-next-app</code>. It starts an interactive setup experience and generates a basic project structure and configuration when used.</p>
+<h3 id="nextjs-app-router">Next.js App Router<a class="headerlink" href="#nextjs-app-router" title="Permanent link">&para;</a></h3>
+<p>Next.js uses the App Router, providing routing for the web application based on the <code>/app</code> directory. Each folder name determines a route that exists. To make the route accessible, a <code>page.tsx</code> file must live in the directory.</p>
+<p>To make the <code>/</code> path accessible, the file structure must look like this:</p>
+<div class="highlight"><pre><span></span><code>├── app
+│   ├── page.tsx
+</code></pre></div>
+<h3 id="css-modules">CSS Modules<a class="headerlink" href="#css-modules" title="Permanent link">&para;</a></h3>
+<p>Next.js supports multiple ways of styling the web app. It supports CSS modules, allowing a locally scoped styling method.</p>
+<div class="highlight"><pre><span></span><code>import styles from &#39;./MyComponent.module.css&#39;; 
+
+function MyComponent() { 
+    return &lt;div className={styles.myClass}&gt;Hello World&lt;/div&gt;; 
+}
+</code></pre></div>
+<h3 id="nextjs-hydration">Next.js Hydration<a class="headerlink" href="#nextjs-hydration" title="Permanent link">&para;</a></h3>
+<p>After webpages are server-side rendered, they are made interactive on the client through hydration.</p>
+<p>Hydration executes the bundled JavaScript, attaching event handlers and linking the React components to their HTML counterparts. Reconciliation is performed to compare the results made on the client with those sent by the server, ensuring they’re in sync.</p>
+<h2 id="nextjs-routing">Next.js Routing<a class="headerlink" href="#nextjs-routing" title="Permanent link">&para;</a></h2>
+<h3 id="nextjs-app-router_1">Next.js App Router<a class="headerlink" href="#nextjs-app-router_1" title="Permanent link">&para;</a></h3>
+<p>In Next.js, the App Router is used to define and structure an application’s routes and their UIs. It is defined by creating a folder named <code>app</code> at the project’s root level.</p>
+<h3 id="nextjs-folders-and-reserved-files">Next.js Folders and Reserved Files<a class="headerlink" href="#nextjs-folders-and-reserved-files" title="Permanent link">&para;</a></h3>
+<p>In the Next.js App Router, folders define path segments, and reserved files within, like <code>page.tsx</code>, define that segment’s UI.</p>
+<div class="highlight"><pre><span></span><code>├── app
+│   ├── users               /users
+│   │   ├── page.tsx          UI
+│   ├──settings             /settings
+└── │   ├── page.tsx          UI
+</code></pre></div>
+<h3 id="nextjs-nested-routes">Next.js Nested Routes<a class="headerlink" href="#nextjs-nested-routes" title="Permanent link">&para;</a></h3>
+<p>In Next.js, nested routes can be created by creating nested folders.</p>
+<div class="highlight"><pre><span></span><code>├── app
+│   ├── users
+│   │   ├── profiles        /users/profiles
+└── │   │   ├── page.tsx      UI
+</code></pre></div>
+<h3 id="composition-of-url-paths">Composition of URL Paths<a class="headerlink" href="#composition-of-url-paths" title="Permanent link">&para;</a></h3>
+<p>A URL path is composed of path segments and comes after the URL domain.</p>
+<p>For example, in the URL <code>https://www.codecademy.com/catalog/language/javascript</code>:</p>
+<ul>
+<li><code>codecademy.com</code> is the domain.</li>
+<li><code>/catalog/language/javascript</code> is the path.</li>
+<li><code>/catalog</code>, <code>/language</code>, and <code>/javascript</code> are path segments.</li>
+</ul>
+<h3 id="nextjs-navigation">Next.js Navigation<a class="headerlink" href="#nextjs-navigation" title="Permanent link">&para;</a></h3>
+<p>Next.js provides SPA-like navigation with the <code>useRouter()</code> hook and <code>&lt;Link&gt;</code> component.</p>
+<p>The <code>useRouter()</code> hook returns a <code>router</code> object which contains methods like <code>push(path)</code>, <code>back()</code>, and <code>forward()</code> for navigation.</p>
+<p>The <code>&lt;Link&gt;</code> component extends the <code>&lt;a&gt;</code> element by adding features like prefetching.</p>
+<div class="highlight"><pre><span></span><code>&#39;use client&#39;
+
+import { useRouter } from &#39;next/navigation&#39;
+import Link from &#39;next/link&#39;
+
+export default function MyPage() {
+    const router = useRouter()
+    return (
+        &lt;div&gt;
+            &lt;Link href=&quot;/&quot;&gt;Home&lt;/Link&gt;
+          &lt;button onClick={router.back}&gt;Back&lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div>
+<h3 id="nextjs-pagetsx">Next.js <code>page.tsx</code><a class="headerlink" href="#nextjs-pagetsx" title="Permanent link">&para;</a></h3>
+<p>In Next.js, a <code>page.tsx</code> is a reserved file that defines a unique UI for its containing path segment and makes it accessible.</p>
+<p>To use <code>page.tsx</code>, you must default export a React component.</p>
+<div class="highlight"><pre><span></span><code>// in page.tsx in the folder /app/settings
+
+export default function SettingsPage() {
+    return (
+        &lt;h1&gt;Your Settings&lt;/h1&gt;
+    )
+}
+</code></pre></div>
+<h3 id="nextjs-layouttsx-and-templatetsx">Next.js <code>layout.tsx</code> and <code>template.tsx</code><a class="headerlink" href="#nextjs-layouttsx-and-templatetsx" title="Permanent link">&para;</a></h3>
+<p>In Next.js, <code>layout.tsx</code> and <code>template.tsx</code> are reserved files used to create shared UIs.</p>
+<p>Similarities include:</p>
+<ul>
+<li>Requiring a default export React component.</li>
+<li>Exported component receives a <code>children</code> prop of type <code>ReactNode</code>.</li>
+<li>Wraps other reserved files and nested routes.</li>
+</ul>
+<p>Differences include:</p>
+<ul>
+<li>A <code>template.tsx</code> component will be re-instantiated while <code>layout.tsx</code> component will not.</li>
+<li>At least one root <code>layout.tsx</code> returning the <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code> elements is required in the App Router.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>// In root layout.tsx
+
+export default function RootLayout({children}: { children: React.ReactNode}) {
+    return (
+        &lt;html&gt;
+              &lt;body&gt;
+                   &lt;h1&gt;Root Layout&lt;/h1&gt;
+                   {children}
+              &lt;/body&gt;
+        &lt;/html&gt;
+    )
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// In template.tsx
+
+export default function Template({children}: {children: React.ReactNode}) {
+    return (
+        &lt;h2&gt;Template Layout&lt;/h2&gt;
+        {children}
+    )
+}
+</code></pre></div>
+<h3 id="nextjs-dynamic-segments">Next.js Dynamic Segments<a class="headerlink" href="#nextjs-dynamic-segments" title="Permanent link">&para;</a></h3>
+<p>In Next.js, a dynamic segment is created by wrapping a folder’s name in square brackets, for example, <code>/app/users/[userId]</code>.</p>
+<p>The <code>page.tsx</code> component exported from this folder will receive a <code>params</code> prop which will contain the dynamic segment data (as a <code>string</code>) and be referenced using the dynamic segment folder name (<code>userId</code>).</p>
+<div class="highlight"><pre><span></span><code>// In /app/users/[userId]/page.tsx
+
+export default function UserPage({ params }: { params: { userId: string }}) {
+    const userId = params.userId  // Access dynamic segment data
+    return (
+        &lt;h2&gt;My User Page for: {userId}&lt;/h2&gt;
+    )
+}
+</code></pre></div>
+<h3 id="nextjs-catch-all-dynamic-segment">Next.js Catch-all Dynamic Segment<a class="headerlink" href="#nextjs-catch-all-dynamic-segment" title="Permanent link">&para;</a></h3>
+<p>In Next.js, dynamic segments can be further modified to be made catch-all and optional. A catch-all segment is created by prefixing a dynamic segment with ellipses like <code>/app/articles/[...articleIds]</code>.</p>
+<p>A catch-all segment’s <code>page.tsx</code> component will receive a <code>params</code> prop containing the dynamic data as an array of <code>string</code>s referenced using the dynamic folder name (<code>articleIds</code>).</p>
+<p>To make the catch-all dynamic segment optional, you wrap it in another pair of square brackets like: <code>/app/articles/[[...articleIds]]</code>.</p>
+<div class="highlight"><pre><span></span><code>// In /app/articles/[[...articleIds]]/page.tsx
+
+export default function ArticlesPage({ params }: { params: { articleIds: string[]}}) {
+    const articleIds = params.articleIds  // Retrieve dynamic segment data
+
+    return (
+        &lt;&gt;
+            &lt;h2&gt;Articles&lt;/h2&gt;
+            {articleIds.map(id =&gt; (&lt;p&gt;Article Id is: {id}&lt;/p&gt;))}
+        &lt;/&gt;
+    )
+}
+</code></pre></div>
+<h3 id="nextjs-reserved-files">Next.js Reserved Files<a class="headerlink" href="#nextjs-reserved-files" title="Permanent link">&para;</a></h3>
+<p>Next.js reserves special files used to define UIs by default exporting a React component. Some of the special files include:</p>
+<ul>
+<li><code>layout.tsx</code>: Defines a shared UI.</li>
+<li><code>template.tsx</code>: Defines a shared UI.</li>
+<li><code>error.tsx</code>: Defines an <code>ErrorBoundary</code> fallback UI.</li>
+<li><code>loading.tsx</code>: Defines a <code>Suspense</code> fallback UI.</li>
+<li><code>not-found.tsx</code>: Defines an <code>ErrorBoundary</code> fallback UI for an unknown segment or nested segments.</li>
+</ul>
+<h3 id="nextjs-reserved-file-component-hierarchy">Next.js Reserved File Component Hierarchy<a class="headerlink" href="#nextjs-reserved-file-component-hierarchy" title="Permanent link">&para;</a></h3>
+<p>Next.js defines a component hierarchy for reserve file components. The hierarchy is:</p>
+<ol>
+<li><code>layout.tsx</code></li>
+<li><code>template.tsx</code></li>
+<li><code>error.tsx</code></li>
+<li><code>loading.tsx</code></li>
+<li><code>not-found.tsx</code></li>
+<li><code>page.tsx</code></li>
+</ol>
+<p>Any nested hierarchy will be placed within the hierarchy of its parent.</p>
+<h2 id="nextjs-server-components">Next.js Server Components<a class="headerlink" href="#nextjs-server-components" title="Permanent link">&para;</a></h2>
+<h3 id="hybrid-rendering">Hybrid Rendering<a class="headerlink" href="#hybrid-rendering" title="Permanent link">&para;</a></h3>
+<p>Next.js applications offer patterns to combine Server and Client Components for managing static and dynamic content effectively.</p>
+<ul>
+<li>Client Components can be directly imported into Server Components.</li>
+<li>Server Components must be passed into Client Components as props for decoupled rendering.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>// Example of using Client and Server Components together
+
+import ClientComponent from &#39;./ClientComponent&#39;;
+
+export default function ServerComponent() {
+    return (
+        &lt;div&gt;
+            &lt;ClientComponent /&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre></div>
+<h3 id="integration-of-server-within-client-components">Integration of Server within Client Components<a class="headerlink" href="#integration-of-server-within-client-components" title="Permanent link">&para;</a></h3>
+<p>In Next.js, Server Components cannot be directly imported into Client Component modules. Instead, they should be passed through a prop for independent rendering. This decoupled approach ensures that server-side logic remains separate from client-side execution.</p>
+<div class="highlight"><pre><span></span><code>// ClientComponent.tsx
+&#39;use client&#39;;
+
+export default function ClientComponent({ children }: { children: React.ReactNode }) {
+    return &lt;div&gt;{children}&lt;/div&gt;;
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// Page.tsx
+
+import ClientComponent from &#39;./ClientComponent.tsx&#39;;
+import ServerComponent from &#39;./ServerComponent.tsx&#39;;
+
+export default function Page() {
+    return (
+        &lt;ClientComponent&gt;
+            &lt;ServerComponent /&gt;
+        &lt;/ClientComponent&gt;
+    )
+}
+</code></pre></div>
+<h3 id="nextjs-server-components_1">Next.js Server Components<a class="headerlink" href="#nextjs-server-components_1" title="Permanent link">&para;</a></h3>
+<p>In Next.js, Server Components, also referred to as React Server Components (RSCs), are the default component type. They optimize load times and enhance SEO efficiency by rendering on the server.</p>
+<h3 id="rendering-server-components">Rendering Server Components<a class="headerlink" href="#rendering-server-components" title="Permanent link">&para;</a></h3>
+<p>Server Components are rendered through a server-client coordination process.</p>
+<p>When a request is received:</p>
+<ul>
+<li>Next.js configures the environment for route-specific React components.</li>
+<li>Rendering work is segmented into smaller units, or chunks, based on route segments.</li>
+<li>Chunks are converted into the React Server Component Payload (RSC Payload).</li>
+<li>The server sends the HTML and RSC Payload to the client.</li>
+<li>Upon receiving the rendering data, React utilizes the RSC Payload to update the browser’s DOM, synchronizing server-rendered components with their client-side counterparts.</li>
+<li>Client Components are loaded and made interactive through JavaScript hydration.</li>
+</ul>
+<h3 id="rendering-strategies">Rendering Strategies<a class="headerlink" href="#rendering-strategies" title="Permanent link">&para;</a></h3>
+<p>Next.js offers three rendering strategies: <strong>static</strong>, <strong>dynamic</strong>, and <strong>streaming</strong>. These strategies enable efficient content distribution, real-time content generation, and improved load times, respectively. Developers can adjust settings to balance between serving static and dynamic responses.</p>
+<h3 id="static-rendering">Static Rendering<a class="headerlink" href="#static-rendering" title="Permanent link">&para;</a></h3>
+<p>Static rendering in Next.js pre-generates pages at build time and can be cached and distributed via a CDN. This approach efficiently caches content, reducing server load, and is ideal for static, unchanging content.</p>
+<h3 id="dynamic-rendering">Dynamic Rendering<a class="headerlink" href="#dynamic-rendering" title="Permanent link">&para;</a></h3>
+<p>Dynamic rendering in Next.js generates real-time content per request, making it suitable for personalized or time-sensitive content. However, this approach may slow response time due to its resource-intensive nature.</p>
+<h3 id="streaming-in-nextjs">Streaming in Next.js<a class="headerlink" href="#streaming-in-nextjs" title="Permanent link">&para;</a></h3>
+<p>Streaming in Next.js enhances load times by progressively sending UI chunks to the client. This feature allows users to interact with parts of the page as they become available. It’s especially useful for pages with delayed data fetching, enabling immediate display of available content.</p>
+<h3 id="server-components-implementation">Server Components Implementation<a class="headerlink" href="#server-components-implementation" title="Permanent link">&para;</a></h3>
+<p>In Next.js, implementing Server Components involves creating a React component, with Next.js automatically handling the server-side rendering process.</p>
+<div class="highlight"><pre><span></span><code>import React from &#39;react&#39;;
+
+// Server Component for displaying item details
+export default function ItemDetails({ itemId }: { itemId: ItemIdType }) {
+    return (
+        &lt;div&gt;
+            &lt;h2&gt;Item: {itemId.name}&lt;/h2&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre></div>
+<h3 id="benefits-of-server-components">Benefits of Server Components<a class="headerlink" href="#benefits-of-server-components" title="Permanent link">&para;</a></h3>
+<p>Server Components in Next.js offer multiple advantages:</p>
+<ul>
+<li>They execute server-side, reducing client-side load by excluding them from the JavaScript bundle.</li>
+<li>They fetch data server-side, optimizing application performance by offloading tasks to the server.</li>
+<li>Server Components transmit only necessary output to the client, enhancing efficiency and reducing bandwidth consumption.</li>
+</ul>
+<h3 id="suspense-with-fallback-components">Suspense with Fallback Components<a class="headerlink" href="#suspense-with-fallback-components" title="Permanent link">&para;</a></h3>
+<p>React Suspense and Fallback Components, when used alongside Next.js Server Components, enable developers to define custom Suspense Boundaries. This enhances user interaction by suspending rendering during loading and displaying placeholders like loaders or skeleton screens.</p>
+<div class="highlight"><pre><span></span><code>import { Suspense } from &#39;react&#39;;
+
+// Define a fallback component
+const FallbackComponent = () =&gt; &lt;p&gt;Loading...&lt;/p&gt;;
+
+function MyComponent() {
+    return (
+        &lt;Suspense fallback={&lt;FallbackComponent /&gt;}&gt;
+            ...
+        &lt;/Suspense&gt;
+    );
+}
+</code></pre></div>
+<h3 id="roles-of-server-and-client-components">Roles of Server and Client Components<a class="headerlink" href="#roles-of-server-and-client-components" title="Permanent link">&para;</a></h3>
+<p>Server Components efficiently handle data and backend interactions, while Client Components focus on interactivity and state management. Understanding and applying these distinct roles optimizes server-side efficiency and user experience in Next.js applications.</p>
+<h2 id="nextjs-data-fetching">Next.js Data Fetching<a class="headerlink" href="#nextjs-data-fetching" title="Permanent link">&para;</a></h2>
+<h3 id="data-fetching">Data Fetching<a class="headerlink" href="#data-fetching" title="Permanent link">&para;</a></h3>
+<p>In a Next.js app, data fetching can occur both on the server and the client. While client-side data fetching may be necessary in some cases, data fetching on the server should be prioritized.</p>
+<h3 id="server-side-data-fetching">Server-Side Data Fetching<a class="headerlink" href="#server-side-data-fetching" title="Permanent link">&para;</a></h3>
+<p>In Next.js applications, data fetching should ideally occur on the server due to several benefits:</p>
+<ul>
+<li>The server has direct access to the database, ensuring efficient data retrieval.</li>
+<li>Fetching data on the server reduces client-server waterfalls, optimizing performance.</li>
+<li>Server components enable data fetching and rendering in the same environment, enhancing efficiency.</li>
+<li>Security is increased as sensitive data can remain unexposed to the client, reducing the risk of data breaches.</li>
+</ul>
+<h3 id="route-handlers-in-nextjs">Route Handlers in Next.js<a class="headerlink" href="#route-handlers-in-nextjs" title="Permanent link">&para;</a></h3>
+<p>Route Handlers in Next.js are used to define custom request handlers responsible for fetching data and preparing responses for client interactions. These handlers are typically defined in the <code>/app</code> directory and are structured to handle various HTTP methods such as <code>GET</code>, <code>POST</code>, and <code>PUT</code>.</p>
+<div class="highlight"><pre><span></span><code>export async function GET() {
+    const response = await fetch(&#39;https://api.example.com/data&#39;);
+
+    if (!response.ok) {
+        throw new Error(&#39;Failed to fetch data.&#39;);
+    }
+
+    const data = await response.json();
+    return data;
+}
+</code></pre></div>
+<h3 id="fetch-calls-in-server-components">Fetch Calls in Server Components<a class="headerlink" href="#fetch-calls-in-server-components" title="Permanent link">&para;</a></h3>
+<p>In Next.js applications, <code>fetch</code> calls can be directly used within server components, enabling seamless data retrieval and processing on the server side. However, this practice can potentially lead to the exposure of sensitive data when not used in conjunction with the <code>'server-only'</code> package.</p>
+<div class="highlight"><pre><span></span><code>// Example of fetch call within a Server Component
+
+export async function MyServerComponent() {
+    const response = await fetch(&#39;https://api.example.com/data&#39;, { cache: &#39;no-store&#39; });
+
+    if (!response.ok) {
+        throw new Error(&#39;Failed to fetch data.&#39;);
+    }
+
+    const data = await response.json();
+    // Additional logic for the component
+}
+</code></pre></div>
+<h3 id="server-only-package"><code>'server-only'</code> Package<a class="headerlink" href="#server-only-package" title="Permanent link">&para;</a></h3>
+<p>The <code>'server-only'</code> package serves to prevent server-only code from being transmitted to the client in Next.js applications.</p>
+<p>Using the <code>'server-only'</code> package can ensure that sensitive server-side logic or resources remain exclusive to the server environment, enhancing security and minimizing the risk of exposing critical information to clients.</p>
+<div class="highlight"><pre><span></span><code>// Example of using the &#39;server-only&#39; package
+
+import &#39;server-only&#39;;
+
+// Server-only code here
+export async function MyServerComponent() {
+
+}
+</code></pre></div>
+<h3 id="cache-control-in-data-fetching">Cache Control in Data Fetching<a class="headerlink" href="#cache-control-in-data-fetching" title="Permanent link">&para;</a></h3>
+<p>Next.js automatically caches fetched data by default. To disable caching, include <code>cache: 'no-store'</code> in the options object of a <code>fetch</code> call.</p>
+<p>Disabling caching ensures that data is fetched freshly from the server each time, preventing stale data issues in Next.js applications.</p>
+<div class="highlight"><pre><span></span><code>const response = await fetch(&#39;https://api.example.com/data&#39;, {
+    cache: &#39;no-store&#39;,
+});
+</code></pre></div>
+<h3 id="sequential-data-fetching-pattern">Sequential Data Fetching Pattern<a class="headerlink" href="#sequential-data-fetching-pattern" title="Permanent link">&para;</a></h3>
+<p>When using the sequential data fetching pattern, requests create waterfalls as they happen one after the other. This approach is used when one data fetch depends on the result of another.</p>
+<h3 id="parallel-data-fetching-pattern">Parallel Data Fetching Pattern<a class="headerlink" href="#parallel-data-fetching-pattern" title="Permanent link">&para;</a></h3>
+<p>In the parallel data fetching pattern, requests within a route occur simultaneously, without waiting for one request to complete before starting another. This approach makes it easier to fetch multiple resources concurrently, leading to faster performance and better user experience.</p>
+<h3 id="optimizing-parallel-data-fetching">Optimizing Parallel Data Fetching<a class="headerlink" href="#optimizing-parallel-data-fetching" title="Permanent link">&para;</a></h3>
+<p>The parallel data fetching pattern can be optimized by preloading data. By creating a function, such as <code>preload()</code>, data can be fetched and cached before it needs to be rendered.</p>
+<div class="highlight"><pre><span></span><code>// utils/getPosts.tsx
+
+import { cache } from &#39;react&#39;;
+import &#39;server-only&#39;;
+
+export const preload = () =&gt; {
+    void getPosts();
+};
+
+export const getPosts = cache(async () =&gt; {
+    const response = await fetch(&#39;https://api.com/some/route&#39;);
+    // more fetch logic
+});
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// In a component file
+
+import { preload } from &#39;../utils/getPosts&#39;;
+import Posts from &#39;../components/Posts/Posts&#39;;
+
+export default function Home() {
+    preload();
+    return (
+        &lt;Posts /&gt;
+    );
+}
+</code></pre></div>
+<h3 id="cached-data-revalidation">Cached Data Revalidation<a class="headerlink" href="#cached-data-revalidation" title="Permanent link">&para;</a></h3>
+<p>Next.js enables cached data revalidation through two methods:</p>
+<ul>
+<li><strong>Time-based Revalidation:</strong> Set the interval for data revalidation.</li>
+<li><strong>On-demand Revalidation:</strong> Group data by path or tag, updating it collectively upon specific event triggers.</li>
+</ul>
+<h3 id="time-based-revalidation">Time-based Revalidation<a class="headerlink" href="#time-based-revalidation" title="Permanent link">&para;</a></h3>
+<p>Time-based revalidation in Next.js allows for the automatic revalidation of cached data after a specified duration, measured in seconds. By setting the <code>next.revalidate</code> option in a fetch call, developers can control how frequently data is refreshed to ensure its accuracy and timeliness.</p>
+<div class="highlight"><pre><span></span><code>const response = await fetch(&#39;https://api.com/some/route&#39;, {
+    next: { revalidate: 30 } // Revalidate data every 30 seconds
+});
+</code></pre></div>
+<h3 id="server-action-in-nextjs">Server Action in Next.js<a class="headerlink" href="#server-action-in-nextjs" title="Permanent link">&para;</a></h3>
+<p>A Server Action is an asynchronous function executed on the server. It is created using the <code>'use server'</code> directive. This enables specific tasks to be executed on the server side, such as data revalidation or fetching.</p>
+<div class="highlight"><pre><span></span><code>&#39;use server&#39;
+
+import { revalidateTag } from &#39;next/cache&#39;
+
+export async function updatePost() {
+    // Revalidate cached data with the &#39;posts&#39; tag
+    revalidateTag(&#39;posts&#39;)
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// The component that uses the updatePost() Server Action
+import { updatePost } from &#39;./actions&#39;;
+
+export default function EditPost() {
+    // Component logic here
+
+    return (
+        &lt;form action={updatePost}&gt;
+            &lt;button type=&quot;submit&quot;&gt;Update&lt;/button&gt;
+        &lt;/form&gt;
+    );
+}
+</code></pre></div>
+<h3 id="on-demand-revalidation">On-Demand Revalidation<a class="headerlink" href="#on-demand-revalidation" title="Permanent link">&para;</a></h3>
+<p>On-demand revalidation ensures data freshness by updating cached data selectively when specific events occur. This optimization technique allows developers to control data revalidation either by path or tag, providing precise control over data fetching.</p>
+<p>The <code>revalidateTag()</code> function from <code>next/cache</code> enables developers to trigger revalidation of cached data associated with a particular tag.</p>
+<div class="highlight"><pre><span></span><code>&#39;use server&#39;
+
+import { revalidateTag } from &#39;next/cache&#39;;
+
+// Server action to update cached data with a specific tag
+export async function updateCachedData() {
+    revalidateTag(&#39;blogs&#39;); // Revalidate cached data with the &#39;blogs&#39; tag
+}
+</code></pre></div>
+<h3 id="loading-uis">Loading UIs<a class="headerlink" href="#loading-uis" title="Permanent link">&para;</a></h3>
+<p>Loading UIs provides visual feedback to users, indicating that data is being fetched, as fetching large amounts of data can take time. These UIs, like spinners, skeletons, progress indicators, or loading messages, serve as instant loading states, replacing segments while data loads.</p>
+<div class="highlight"><pre><span></span><code>//loading.tsx
+
+export default function Loading(){
+    return (
+        &lt;p&gt;Loading data...&lt;/p&gt;
+    )
+}
+</code></pre></div>
+<h3 id="streaming-using-suspense-boundaries">Streaming using <code>&lt;Suspense&gt;</code> boundaries<a class="headerlink" href="#streaming-using-suspense-boundaries" title="Permanent link">&para;</a></h3>
+<p>Streaming using <code>&lt;Suspense&gt;</code> boundaries allows a web app to progressively render and incrementally stream parts of the UI to the client, enhancing user experience by displaying content as it becomes available.</p>
+<div class="highlight"><pre><span></span><code>&lt;Suspense fallback={&lt;Loading /&gt;} &gt;
+    &lt;UserPosts /&gt;
+&lt;/Suspense&gt;
+</code></pre></div>
+<h3 id="server-only-forms-with-server-actions">Server-Only Forms With Server Actions<a class="headerlink" href="#server-only-forms-with-server-actions" title="Permanent link">&para;</a></h3>
+<p>Server-only forms can be created in a server component using Server Actions to efficiently manage form submissions by retrieving, validating, and processing user data on the server side.</p>
+<div class="highlight"><pre><span></span><code>// components/FeedbackForm/actions.ts
+&#39;use server&#39;  
+import { redirect } from &#39;next/navigation&#39;
+
+export async function handleFeedback(formData: FormData) {
+    // process form data
+    redirect(&#39;/feedback/thankyou&#39;);
+}  
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// components/FeedbackForm/FeedbackForm.tsx  
+import { handleFeedback } from &#39;./actions&#39;
+
+export default function FeedbackForm() {
+    return (
+        &lt;form action={handleFeedback}&gt;
+            {/* form fields */}
+            &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    );
+}
+</code></pre></div>
+<h2 id="nextjs-optimization">Next.js Optimization<a class="headerlink" href="#nextjs-optimization" title="Permanent link">&para;</a></h2>
+<p>Web applications should prioritize providing quality and optimized end-user experiences. Optimization of web applications with Next.js revolves around enhancing loading speed, minimizing interactivity delays, and ensuring visual consistency.</p>
+<h3 id="largest-contentful-paint-lcp">Largest Contentful Paint (LCP)<a class="headerlink" href="#largest-contentful-paint-lcp" title="Permanent link">&para;</a></h3>
+<p>Largest Contentful Paint (LCP) is the time from the start of the navigation until the largest block of content is visible to the user. The LCP should be visible within 2.5 seconds of the page initially loading. The LCP can be any element, including a large text block, video, or image.</p>
+<p><img alt="A diagram showing metrics for the Largest Contentful Paint (LCP). Below 2.5 seconds is excellent. Between 2.5 and 4 seconds needs improvement. Above 4 seconds is poor." src="https://static-assets.codecademy.com/Courses/learn-nextjs/optimization/lcp.svg" /></p>
+<h3 id="first-input-delay-fid">First Input Delay (FID)<a class="headerlink" href="#first-input-delay-fid" title="Permanent link">&para;</a></h3>
+<p>First Input Delay (FID) is the time from when the user first interacts to the time when the browser begins processing the events. The FID should take no longer than 0.1 seconds or 100ms. Interactions can include the following actions:</p>
+<ul>
+<li>user clicking a link</li>
+<li>user tapping on a button</li>
+<li>calling a custom, JavaScript-powered control on an interaction</li>
+</ul>
+<p><img alt="A diagram showing metrics for First Input Delay (FID). Below 100ms is excellent. Between 100ms and 300ms needs improvement. Above 300ms is poor." src="https://static-assets.codecademy.com/Courses/learn-nextjs/optimization/fid.svg" /></p>
+<h3 id="cumulative-layout-shift-cls">Cumulative Layout Shift (CLS)<a class="headerlink" href="#cumulative-layout-shift-cls" title="Permanent link">&para;</a></h3>
+<p>Cumulative Layout Shift (CLS) measures the largest burst of layout shift for every unexpected layout during the lifespan of a page. A layout shift occurs any time a visible element changes its position from one rendered frame to the next. Layout shift is calculated using the following formula:</p>
+<p><code>layout shift score = impact fraction * distance fraction</code></p>
+<p>CLS should score less than 0.1.</p>
+<p><img alt="A diagram showing metrics for Cumulative Layout Shift (CLS). Below 0.1 is excellent. Between 0.1 and 0.25 needs improvement. Above 0.25 is poor." src="https://static-assets.codecademy.com/Courses/learn-nextjs/optimization/cls.svg" /></p>
+<h3 id="nextjs-script-optimization">Next.js Script Optimization<a class="headerlink" href="#nextjs-script-optimization" title="Permanent link">&para;</a></h3>
+<p>Next.js’ built-in <a href="https://nextjs.org/docs/pages/building-your-application/optimizing/scripts"><code>next/script</code> Component</a> helps with loading third-party scripts, only loading them one time even if the user navigates between pages. There are four strategies to fine-tune script execution:</p>
+<ul>
+<li><code>beforeInteractive</code>: Load the script before any Next.js code and before any page hydration occurs.</li>
+<li><code>afterInteractive</code>: (default) Load the script early, but after some hydration on the page occurs.</li>
+<li><code>lazyOnload</code>: Load the script later during the browser’s idle time.</li>
+<li><code>worker</code>: (experimental) Load the script in a web worker.</li>
+</ul>
+<h3 id="nextjs-font-optimization">Next.js Font Optimization<a class="headerlink" href="#nextjs-font-optimization" title="Permanent link">&para;</a></h3>
+<p>Next.js’ built-in <a href="https://nextjs.org/docs/pages/building-your-application/optimizing/fonts"><code>next/font</code> Component</a> adds web fonts with zero layout shift and zero requests to Google. Next.js uses font loading for both Google fonts and local fonts. Next.js also provides the capability to preload and reuse fonts efficiently in your application.</p>
+<h3 id="nextjs-image-optimization">Next.js Image Optimization<a class="headerlink" href="#nextjs-image-optimization" title="Permanent link">&para;</a></h3>
+<p>Next.js’ built-in <a href="https://nextjs.org/docs/pages/building-your-application/optimizing/images"><code>next/image</code> Component</a> extends the HTML <code>&lt;img&gt;</code> element to include automatic image optimization. Image optimization focuses on:</p>
+<ul>
+<li>Size Optimization: Automatically serve correctly sized images for each device.</li>
+<li>Visual Stability: Prevent layout shift automatically when images are loading.</li>
+<li>Faster Page Loads: Images are only loaded when they enter the viewport using native browser lazy loading.</li>
+<li>Asset Flexibility: On-demand image resizing, even for images stored on remote servers.</li>
+</ul>
+<h3 id="nextjs-optimization-tools">Next.js Optimization Tools<a class="headerlink" href="#nextjs-optimization-tools" title="Permanent link">&para;</a></h3>
+<p>Next.js has built-in tools to optimize images, fonts, scripts, and metadata.</p>
+<ul>
+<li><a href="https://nextjs.org/docs/pages/api-reference/components/image">Images</a>: <code>next/image</code></li>
+<li><a href="https://nextjs.org/docs/pages/api-reference/components/font">Fonts</a>: <code>next/font/google</code> and <code>next/font/local</code></li>
+<li><a href="https://nextjs.org/docs/pages/api-reference/components/script">Scripts</a>: <code>next/script</code></li>
+<li><a href="https://nextjs.org/docs/app/building-your-application/optimizing/metadata">Metadata</a>: the <code>Metadata</code> object, <code>robots.tsx</code>, and <code>sitemap.tsx</code>.</li>
+</ul>
+<h3 id="nextjs-metadata-optimization">Next.js Metadata Optimization<a class="headerlink" href="#nextjs-metadata-optimization" title="Permanent link">&para;</a></h3>
+<p>Next.js has a <a href="https://nextjs.org/docs/app/building-your-application/optimizing/metadata">Metadata API</a> to help define application metadata for improved SEO and shareability. Developers can use the <code>generateMetadata()</code> function for dynamic, config-based metadata generation or a static metadata object for static, config-based metadata generation. Developers can also use any of the <a href="https://nextjs.org/docs/app/building-your-application/optimizing/metadata#file-based-metadata">four available file-based metadata generation techniques</a>.</p>
+<h3 id="nextjs-config-based-metadata-optimization">Next.js Config-Based Metadata Optimization<a class="headerlink" href="#nextjs-config-based-metadata-optimization" title="Permanent link">&para;</a></h3>
+<p>Config-based Metadata exports a metadata object to a <code>layout.tsx</code> or <code>page.tsx</code> file.</p>
+<div class="highlight"><pre><span></span><code>export async function generateMetadata({
+    params,
+}: MetadataProps): Promise&lt;Metadata&gt; {
+    const slug = params.slug
+    return {
+        title: `${slug}`,
+        description: `${slug}`,
+    }
+}
+</code></pre></div>
+<h3 id="nextjs-file-based-metadata-optimization">Next.js File-Based Metadata Optimization<a class="headerlink" href="#nextjs-file-based-metadata-optimization" title="Permanent link">&para;</a></h3>
+<p>File-based Metadata adds a statically or dynamically generated file to a route file.</p>
+<div class="highlight"><pre><span></span><code>export const metadata: Metadata = {
+    title: &#39;Title of Page&#39;,
+    description: &#39;Description of Page&#39;,
+}
+</code></pre></div>
+<h3 id="lighthouse">Lighthouse<a class="headerlink" href="#lighthouse" title="Permanent link">&para;</a></h3>
+<p><a href="https://developer.chrome.com/docs/lighthouse/overview">Lighthouse</a> is an open-source, automated tool to measure and assess web performance. Its primary goal is to enhance a website’s overall experience using the following metrics:</p>
+<ul>
+<li>Performance</li>
+<li>Accessibility</li>
+<li>Best Practices</li>
+<li>SEO</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/yahyaqr/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/yahya-aqrom/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/yahyaqr/oracle" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.top", "navigation.path", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
